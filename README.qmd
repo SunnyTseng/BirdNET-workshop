@@ -1,6 +1,6 @@
 ---
 title: "README"
-format: html
+format: gfm
 ---
 
 # Data4Nature workhsop
