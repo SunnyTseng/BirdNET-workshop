@@ -1,10 +1,14 @@
-# README
+# Data4Nature workhsop - Bioacoustics in the AI world
 
+<<<<<<< HEAD
 
 # Bioacoustics in the AI world
 
 ## About
 
+=======
+## About the workshop
+>>>>>>> 5183dd9be451466f280eaa00937944f043fbd2a3
 Instructors: Dr. Cara Appel, Dr. Sunny Tseng
 
 - Date: Tuesday Oct 13th
