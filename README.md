@@ -1,14 +1,10 @@
-# Data4Nature workhsop - Bioacoustics in the AI world
+# README
 
-<<<<<<< HEAD
 
 # Bioacoustics in the AI world
 
 ## About
 
-=======
-## About the workshop
->>>>>>> 5183dd9be451466f280eaa00937944f043fbd2a3
 Instructors: Dr. Cara Appel, Dr. Sunny Tseng
 
 - Date: Tuesday Oct 13th
@@ -44,7 +40,6 @@ will be structured in three parts: (1) general computer vision concepts,
   recordings over the 24-hour period.
   - Batch analysis:
   - Validation:
-  - Train:
 
 ## AI tools for bioacoustics
 

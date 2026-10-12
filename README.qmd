@@ -28,9 +28,6 @@ Computer vision, a form of artificial intelligence, is transforming how we extra
 - Practice dataset: The dataset comes from a single AudioMoth deployed under a Great Cormorant colony of more than 3,000 breeding pairs in Curonian Spit National Park, in Lithuania. It includes one day of recordings, collected on 9 June 2025, with the recording schedule set to 1 minute on and 3 minutes off. This schedule yielded 360 one-minute recordings over the 24-hour period.
   - Batch analysis:
   - Validation: 
-  - Train:
-
-
 
 
 
