@@ -1,14 +1,14 @@
 # Data4Nature workhsop
 
+Instructors: Dr. Cara Appel, Dr. Sunny Tseng
+
 - Date: Tuesday Oct 13th
 - Time: 10:30 am - 1:30pm \*includes light lunch
 - Location: BRC Multipurpose Room (1014)
 - Cost: Free – limited seats
 - Who: UBC students, staff, faculty, affiliates
 
-Instructors: Dr. Cara Appel, Dr. Sunny Tseng
-
-### Introduction
+## Introduction
 
 Computer vision, a form of artificial intelligence, is transforming how
 we extract species detections from large ecological datasets. This
