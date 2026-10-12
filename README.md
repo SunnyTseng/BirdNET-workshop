@@ -1,4 +1,4 @@
-# Data4Nature workhsop
+# Data4Nature workhsop - Bioacoustics in the AI world
 
 ## About the workshop
 Instructors: Dr. Cara Appel, Dr. Sunny Tseng
