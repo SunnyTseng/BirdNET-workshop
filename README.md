@@ -1,5 +1,6 @@
 # Data4Nature workhsop
 
+## About the workshop
 Instructors: Dr. Cara Appel, Dr. Sunny Tseng
 
 - Date: Tuesday Oct 13th
