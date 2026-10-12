@@ -1,6 +1,0 @@
-Selection	View	Channel	Begin Time (s)	End Time (s)	Low Freq (Hz)	High Freq (Hz)	Common Name	Species Code	Confidence	Begin Path	File Offset (s)
-1	Spectrogram 1	1	18.0	21.0	0	15000	Northern Cardinal	norcar	0.3612	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_042800.WAV	18.0
-2	Spectrogram 1	1	45.0	48.0	0	15000	Black-headed Grosbeak	bkhgro	0.1046	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_042800.WAV	45.0
-3	Spectrogram 1	1	51.0	54.0	0	15000	Kentucky Warbler	kenwar	0.1405	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_042800.WAV	51.0
-4	Spectrogram 1	1	51.0	54.0	0	15000	Stitchbird	stitch1	0.1275	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_042800.WAV	51.0
-5	Spectrogram 1	1	51.0	54.0	0	15000	Noisy Friarbird	noifri1	0.1019	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_042800.WAV	51.0

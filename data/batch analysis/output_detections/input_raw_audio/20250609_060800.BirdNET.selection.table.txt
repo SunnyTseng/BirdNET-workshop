@@ -1,9 +1,0 @@
-Selection	View	Channel	Begin Time (s)	End Time (s)	Low Freq (Hz)	High Freq (Hz)	Common Name	Species Code	Confidence	Begin Path	File Offset (s)
-1	Spectrogram 1	1	9.0	12.0	0	15000	American Crow	amecro	0.1051	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_060800.WAV	9.0
-2	Spectrogram 1	1	21.0	24.0	0	15000	American Robin	amerob	0.1042	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_060800.WAV	21.0
-3	Spectrogram 1	1	33.0	36.0	0	15000	Northern Cardinal	norcar	0.3352	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_060800.WAV	33.0
-4	Spectrogram 1	1	36.0	39.0	0	15000	Red-breasted Flycatcher	rebfly	0.2133	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_060800.WAV	36.0
-5	Spectrogram 1	1	48.0	51.0	0	15000	American Robin	amerob	0.2890	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_060800.WAV	48.0
-6	Spectrogram 1	1	51.0	54.0	0	15000	Canada Goose	cangoo	0.2671	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_060800.WAV	51.0
-7	Spectrogram 1	1	51.0	54.0	0	15000	American Robin	amerob	0.1273	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_060800.WAV	51.0
-8	Spectrogram 1	1	51.0	54.0	0	15000	American Crow	amecro	0.1196	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_060800.WAV	51.0

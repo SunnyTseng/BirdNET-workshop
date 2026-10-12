@@ -1,0 +1,18 @@
+Start (s),End (s),Scientific name,Common name,Confidence,File
+0.0,3.0,Ficedula parva,Red-breasted Flycatcher,0.9999,D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_092400.WAV
+3.0,6.0,Ficedula parva,Red-breasted Flycatcher,0.9277,D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_092400.WAV
+12.0,15.0,Ficedula parva,Red-breasted Flycatcher,0.1846,D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_092400.WAV
+15.0,18.0,Ficedula parva,Red-breasted Flycatcher,0.1336,D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_092400.WAV
+18.0,21.0,Ficedula parva,Red-breasted Flycatcher,1.0000,D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_092400.WAV
+21.0,24.0,Ficedula parva,Red-breasted Flycatcher,0.9910,D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_092400.WAV
+24.0,27.0,Phalacrocorax carbo,Great Cormorant,0.1635,D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_092400.WAV
+27.0,30.0,Phalacrocorax carbo,Great Cormorant,0.1651,D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_092400.WAV
+27.0,30.0,Columba oenas,Stock Dove,0.1015,D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_092400.WAV
+30.0,33.0,Phalacrocorax carbo,Great Cormorant,0.4551,D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_092400.WAV
+33.0,36.0,Phalacrocorax carbo,Great Cormorant,0.2603,D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_092400.WAV
+36.0,39.0,Ficedula parva,Red-breasted Flycatcher,0.1360,D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_092400.WAV
+42.0,45.0,Ficedula parva,Red-breasted Flycatcher,0.9981,D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_092400.WAV
+45.0,48.0,Ficedula parva,Red-breasted Flycatcher,0.9931,D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_092400.WAV
+48.0,51.0,Phalacrocorax carbo,Great Cormorant,0.1895,D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_092400.WAV
+54.0,57.0,Phalacrocorax carbo,Great Cormorant,0.1453,D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_092400.WAV
+57.0,60.0,Phalacrocorax carbo,Great Cormorant,0.8343,D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_092400.WAV

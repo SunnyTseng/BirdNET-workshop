@@ -1,9 +1,0 @@
-Selection	View	Channel	Begin Time (s)	End Time (s)	Low Freq (Hz)	High Freq (Hz)	Common Name	Species Code	Confidence	Begin Path	File Offset (s)
-1	Spectrogram 1	1	15.0	18.0	0	15000	Northern Saw-whet Owl	nswowl	0.3326	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_012800.WAV	15.0
-2	Spectrogram 1	1	24.0	27.0	0	15000	Black-capped Chickadee	bkcchi	0.2478	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_012800.WAV	24.0
-3	Spectrogram 1	1	24.0	27.0	0	15000	Great Tit	gretit1	0.2041	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_012800.WAV	24.0
-4	Spectrogram 1	1	30.0	33.0	0	15000	American Robin	amerob	0.1112	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_012800.WAV	30.0
-5	Spectrogram 1	1	33.0	36.0	0	15000	Black-headed Grosbeak	bkhgro	0.1585	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_012800.WAV	33.0
-6	Spectrogram 1	1	51.0	54.0	0	15000	American Crow	amecro	0.2828	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_012800.WAV	51.0
-7	Spectrogram 1	1	54.0	57.0	0	15000	Wood Thrush	woothr	0.1569	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_012800.WAV	54.0
-8	Spectrogram 1	1	57.0	60.0	0	15000	Red-breasted Flycatcher	rebfly	0.2323	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_012800.WAV	57.0

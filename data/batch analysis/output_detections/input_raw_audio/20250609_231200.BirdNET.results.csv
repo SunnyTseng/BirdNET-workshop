@@ -1,0 +1,19 @@
+Start (s),End (s),Scientific name,Common name,Confidence,File
+0.0,3.0,Ficedula parva,Red-breasted Flycatcher,0.8911,D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_231200.WAV
+0.0,3.0,Phylloscopus sibilatrix,Wood Warbler,0.2451,D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_231200.WAV
+3.0,6.0,Phalacrocorax carbo,Great Cormorant,0.1530,D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_231200.WAV
+6.0,9.0,Phalacrocorax carbo,Great Cormorant,0.2372,D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_231200.WAV
+6.0,9.0,Sylvia atricapilla,Eurasian Blackcap,0.1077,D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_231200.WAV
+9.0,12.0,Phalacrocorax carbo,Great Cormorant,0.1670,D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_231200.WAV
+9.0,12.0,Ficedula parva,Red-breasted Flycatcher,0.1152,D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_231200.WAV
+15.0,18.0,Ficedula parva,Red-breasted Flycatcher,0.8672,D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_231200.WAV
+18.0,21.0,Ficedula parva,Red-breasted Flycatcher,0.6852,D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_231200.WAV
+18.0,21.0,Phalacrocorax carbo,Great Cormorant,0.3265,D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_231200.WAV
+24.0,27.0,Sylvia atricapilla,Eurasian Blackcap,0.2427,D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_231200.WAV
+27.0,30.0,Sylvia atricapilla,Eurasian Blackcap,0.1011,D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_231200.WAV
+30.0,33.0,Ficedula parva,Red-breasted Flycatcher,0.6725,D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_231200.WAV
+33.0,36.0,Ficedula parva,Red-breasted Flycatcher,0.2894,D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_231200.WAV
+36.0,39.0,Phalacrocorax carbo,Great Cormorant,0.2454,D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_231200.WAV
+42.0,45.0,Ficedula parva,Red-breasted Flycatcher,0.3887,D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_231200.WAV
+45.0,48.0,Ficedula parva,Red-breasted Flycatcher,0.7208,D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_231200.WAV
+54.0,57.0,Sylvia atricapilla,Eurasian Blackcap,0.4051,D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_231200.WAV
