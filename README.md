@@ -31,7 +31,8 @@ will be structured in three parts: (1) general computer vision concepts,
 
 ## Materials
 
-- Slides:
+- [Slides](https://canva.link/20vf2q3n2kkflju):
+  https://canva.link/20vf2q3n2kkflju  
 - Practice dataset comes from a single AudioMoth deployed under a Great
   Cormorant colony of more than 3,000 breeding pairs in Curonian Spit
   National Park, in Lithuania. It includes one day of recordings,
@@ -47,12 +48,11 @@ will be structured in three parts: (1) general computer vision concepts,
 ### BirdNET
 
 - [Website](https://birdnet.cornell.edu/)
-- Publication:
 
 ### Perch
 
 - Github: https://github.com/google-research/perch
-- Publicatino:
+- Publication: https://arxiv.org/html/2508.04665v2
 - Youtube video for the
   publication:https://www.youtube.com/watch?v=Z_JmsEl0xbs
 
