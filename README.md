@@ -1,6 +1,3 @@
-# README
-
-
 # Data4Nature workhsop
 
 - Date: Tuesday Oct 13th
