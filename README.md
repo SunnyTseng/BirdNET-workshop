@@ -1,7 +1,11 @@
 # README
 
 
-# Data4Nature workhsop
+# Bioacoustics in the AI world
+
+## About
+
+Instructors: Dr. Cara Appel, Dr. Sunny Tseng
 
 - Date: Tuesday Oct 13th
 - Time: 10:30 am - 1:30pm \*includes light lunch
@@ -9,9 +13,7 @@
 - Cost: Free – limited seats
 - Who: UBC students, staff, faculty, affiliates
 
-Instructors: Dr. Cara Appel, Dr. Sunny Tseng
-
-### Introduction
+## Introduction
 
 Computer vision, a form of artificial intelligence, is transforming how
 we extract species detections from large ecological datasets. This
@@ -26,6 +28,19 @@ options, and demonstrate the use of two popular models: SpeciesNet (for
 camera trap images) and BirdNET (for bioacoustics data). The workshop
 will be structured in three parts: (1) general computer vision concepts,
 (2) camera trap data processing, and (3) bioacoustics data processing.
+
+## Materials
+
+- Slides:
+- Practice dataset: The dataset comes from a single AudioMoth deployed
+  under a Great Cormorant colony of more than 3,000 breeding pairs in
+  Curonian Spit National Park, in Lithuania. It includes one day of
+  recordings, collected on 9 June 2025, with the recording schedule set
+  to 1 minute on and 3 minutes off. This schedule yielded 360 one-minute
+  recordings over the 24-hour period.
+  - Batch analysis:
+  - Validation:
+  - Train:
 
 ## AI tools for bioacoustics
 

@@ -1,0 +1,22 @@
+Selection	View	Channel	Begin Time (s)	End Time (s)	Low Freq (Hz)	High Freq (Hz)	Common Name	Species Code	Confidence	Begin Path	File Offset (s)
+1	Spectrogram 1	1	0.0	3.0	0	15000	Red-breasted Flycatcher	rebfly	0.1718	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_082000.WAV	0.0
+2	Spectrogram 1	1	3.0	6.0	0	15000	Northern Cardinal	norcar	0.1012	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_082000.WAV	3.0
+3	Spectrogram 1	1	9.0	12.0	0	15000	American Crow	amecro	0.6557	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_082000.WAV	9.0
+4	Spectrogram 1	1	9.0	12.0	0	15000	Red-eyed Vireo	reevir1	0.3300	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_082000.WAV	9.0
+5	Spectrogram 1	1	9.0	12.0	0	15000	Eastern Towhee	eastow	0.3238	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_082000.WAV	9.0
+6	Spectrogram 1	1	9.0	12.0	0	15000	Wood Thrush	woothr	0.3201	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_082000.WAV	9.0
+7	Spectrogram 1	1	9.0	12.0	0	15000	Kentucky Warbler	kenwar	0.2841	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_082000.WAV	9.0
+8	Spectrogram 1	1	9.0	12.0	0	15000	Hooded Warbler	hoowar	0.2184	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_082000.WAV	9.0
+9	Spectrogram 1	1	9.0	12.0	0	15000	Scarlet Tanager	scatan	0.2015	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_082000.WAV	9.0
+10	Spectrogram 1	1	9.0	12.0	0	15000	Black-capped Chickadee	bkcchi	0.1783	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_082000.WAV	9.0
+11	Spectrogram 1	1	18.0	21.0	0	15000	Kentucky Warbler	kenwar	0.1401	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_082000.WAV	18.0
+12	Spectrogram 1	1	27.0	30.0	0	15000	Black-capped Chickadee	bkcchi	0.1016	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_082000.WAV	27.0
+13	Spectrogram 1	1	30.0	33.0	0	15000	Northern Cardinal	norcar	0.1659	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_082000.WAV	30.0
+14	Spectrogram 1	1	33.0	36.0	0	15000	Red-breasted Flycatcher	rebfly	0.2741	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_082000.WAV	33.0
+15	Spectrogram 1	1	42.0	45.0	0	15000	Northern Cardinal	norcar	0.1617	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_082000.WAV	42.0
+16	Spectrogram 1	1	48.0	51.0	0	15000	Northern Cardinal	norcar	0.3172	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_082000.WAV	48.0
+17	Spectrogram 1	1	48.0	51.0	0	15000	American Robin	amerob	0.1219	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_082000.WAV	48.0
+18	Spectrogram 1	1	51.0	54.0	0	15000	Red-breasted Flycatcher	rebfly	0.3124	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_082000.WAV	51.0
+19	Spectrogram 1	1	51.0	54.0	0	15000	Northern Cardinal	norcar	0.2265	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_082000.WAV	51.0
+20	Spectrogram 1	1	51.0	54.0	0	15000	Black-capped Chickadee	bkcchi	0.1189	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_082000.WAV	51.0
+21	Spectrogram 1	1	54.0	57.0	0	15000	Northern Cardinal	norcar	0.2602	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_082000.WAV	54.0

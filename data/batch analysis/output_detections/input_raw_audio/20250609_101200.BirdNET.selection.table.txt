@@ -1,0 +1,25 @@
+Selection	View	Channel	Begin Time (s)	End Time (s)	Low Freq (Hz)	High Freq (Hz)	Common Name	Species Code	Confidence	Begin Path	File Offset (s)
+1	Spectrogram 1	1	0.0	3.0	0	15000	Great Cormorant	grecor	0.1130	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_101200.WAV	0.0
+2	Spectrogram 1	1	6.0	9.0	0	15000	Great Cormorant	grecor	0.4120	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_101200.WAV	6.0
+3	Spectrogram 1	1	6.0	9.0	0	15000	Common Murre	commur	0.1092	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_101200.WAV	6.0
+4	Spectrogram 1	1	9.0	12.0	0	15000	Boat-billed Heron	bobher1	0.3025	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_101200.WAV	9.0
+5	Spectrogram 1	1	9.0	12.0	0	15000	West Mexican Chachalaca	wemcha1	0.2295	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_101200.WAV	9.0
+6	Spectrogram 1	1	12.0	15.0	0	15000	Great Cormorant	grecor	0.4599	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_101200.WAV	12.0
+7	Spectrogram 1	1	12.0	15.0	0	15000	Double-crested Cormorant	doccor	0.1306	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_101200.WAV	12.0
+8	Spectrogram 1	1	15.0	18.0	0	15000	Great Cormorant	grecor	0.1751	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_101200.WAV	15.0
+9	Spectrogram 1	1	15.0	18.0	0	15000	Carrion Crow	carcro1	0.1459	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_101200.WAV	15.0
+10	Spectrogram 1	1	15.0	18.0	0	15000	Hooded Crow	hoocro1	0.1340	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_101200.WAV	15.0
+11	Spectrogram 1	1	15.0	18.0	0	15000	Australian Magpie	ausmag2	0.1207	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_101200.WAV	15.0
+12	Spectrogram 1	1	18.0	21.0	0	15000	Tricolored Blackbird	tribla	0.1709	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_101200.WAV	18.0
+13	Spectrogram 1	1	18.0	21.0	0	15000	Great Cormorant	grecor	0.1066	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_101200.WAV	18.0
+14	Spectrogram 1	1	27.0	30.0	0	15000	Northern Cardinal	norcar	0.1394	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_101200.WAV	27.0
+15	Spectrogram 1	1	30.0	33.0	0	15000	Hooded Crow	hoocro1	0.2733	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_101200.WAV	30.0
+16	Spectrogram 1	1	30.0	33.0	0	15000	Carrion Crow	carcro1	0.1497	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_101200.WAV	30.0
+17	Spectrogram 1	1	36.0	39.0	0	15000	Great Cormorant	grecor	0.3031	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_101200.WAV	36.0
+18	Spectrogram 1	1	39.0	42.0	0	15000	Great Cormorant	grecor	0.2076	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_101200.WAV	39.0
+19	Spectrogram 1	1	45.0	48.0	0	15000	Great Cormorant	grecor	0.1966	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_101200.WAV	45.0
+20	Spectrogram 1	1	48.0	51.0	0	15000	Great Cormorant	grecor	0.4259	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_101200.WAV	48.0
+21	Spectrogram 1	1	51.0	54.0	0	15000	Great Cormorant	grecor	0.2204	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_101200.WAV	51.0
+22	Spectrogram 1	1	51.0	54.0	0	15000	Ring-billed Gull	ribgul	0.1066	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_101200.WAV	51.0
+23	Spectrogram 1	1	54.0	57.0	0	15000	Great Cormorant	grecor	0.2148	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_101200.WAV	54.0
+24	Spectrogram 1	1	54.0	57.0	0	15000	Black-legged Kittiwake	bklkit	0.1101	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_101200.WAV	54.0

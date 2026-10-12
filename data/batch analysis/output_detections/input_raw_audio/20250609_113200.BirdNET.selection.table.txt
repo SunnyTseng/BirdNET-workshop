@@ -1,0 +1,23 @@
+Selection	View	Channel	Begin Time (s)	End Time (s)	Low Freq (Hz)	High Freq (Hz)	Common Name	Species Code	Confidence	Begin Path	File Offset (s)
+1	Spectrogram 1	1	0.0	3.0	0	15000	Wood Thrush	woothr	0.4067	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_113200.WAV	0.0
+2	Spectrogram 1	1	0.0	3.0	0	15000	American Robin	amerob	0.2345	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_113200.WAV	0.0
+3	Spectrogram 1	1	0.0	3.0	0	15000	Eastern Towhee	eastow	0.1617	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_113200.WAV	0.0
+4	Spectrogram 1	1	6.0	9.0	0	15000	Wood Thrush	woothr	0.2302	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_113200.WAV	6.0
+5	Spectrogram 1	1	9.0	12.0	0	15000	Red-breasted Flycatcher	rebfly	0.1779	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_113200.WAV	9.0
+6	Spectrogram 1	1	12.0	15.0	0	15000	American Crow	amecro	0.3367	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_113200.WAV	12.0
+7	Spectrogram 1	1	12.0	15.0	0	15000	Wood Thrush	woothr	0.1226	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_113200.WAV	12.0
+8	Spectrogram 1	1	12.0	15.0	0	15000	Eastern Towhee	eastow	0.1077	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_113200.WAV	12.0
+9	Spectrogram 1	1	15.0	18.0	0	15000	Chestnut Wood-Quail	chwqua1	0.1104	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_113200.WAV	15.0
+10	Spectrogram 1	1	18.0	21.0	0	15000	Wood Thrush	woothr	0.1022	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_113200.WAV	18.0
+11	Spectrogram 1	1	24.0	27.0	0	15000	Common Murre	commur	0.2055	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_113200.WAV	24.0
+12	Spectrogram 1	1	24.0	27.0	0	15000	Northern Cardinal	norcar	0.1112	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_113200.WAV	24.0
+13	Spectrogram 1	1	24.0	27.0	0	15000	American Crow	amecro	0.1095	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_113200.WAV	24.0
+14	Spectrogram 1	1	27.0	30.0	0	15000	Great Cormorant	grecor	0.1037	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_113200.WAV	27.0
+15	Spectrogram 1	1	30.0	33.0	0	15000	Eastern Towhee	eastow	0.2669	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_113200.WAV	30.0
+16	Spectrogram 1	1	30.0	33.0	0	15000	Wood Thrush	woothr	0.1114	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_113200.WAV	30.0
+17	Spectrogram 1	1	39.0	42.0	0	15000	Wood Thrush	woothr	0.1394	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_113200.WAV	39.0
+18	Spectrogram 1	1	48.0	51.0	0	15000	Wood Thrush	woothr	0.1092	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_113200.WAV	48.0
+19	Spectrogram 1	1	51.0	54.0	0	15000	Northern Pygmy-Owl	nopowl	0.1671	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_113200.WAV	51.0
+20	Spectrogram 1	1	51.0	54.0	0	15000	Eastern Towhee	eastow	0.1295	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_113200.WAV	51.0
+21	Spectrogram 1	1	54.0	57.0	0	15000	American Robin	amerob	0.1045	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_113200.WAV	54.0
+22	Spectrogram 1	1	57.0	60.0	0	15000	Northern Saw-whet Owl	nswowl	0.1280	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_113200.WAV	57.0

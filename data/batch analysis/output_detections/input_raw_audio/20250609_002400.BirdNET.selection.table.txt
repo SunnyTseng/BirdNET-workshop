@@ -1,0 +1,25 @@
+Selection	View	Channel	Begin Time (s)	End Time (s)	Low Freq (Hz)	High Freq (Hz)	Common Name	Species Code	Confidence	Begin Path	File Offset (s)
+1	Spectrogram 1	1	3.0	6.0	0	15000	American Crow	amecro	0.1963	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_002400.WAV	3.0
+2	Spectrogram 1	1	3.0	6.0	0	15000	Eurasian Blackcap	blackc1	0.1772	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_002400.WAV	3.0
+3	Spectrogram 1	1	6.0	9.0	0	15000	Red-breasted Flycatcher	rebfly	0.4148	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_002400.WAV	6.0
+4	Spectrogram 1	1	6.0	9.0	0	15000	Narcissus Flycatcher	narfly2	0.3742	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_002400.WAV	6.0
+5	Spectrogram 1	1	9.0	12.0	0	15000	Eurasian Blackcap	blackc1	0.7404	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_002400.WAV	9.0
+6	Spectrogram 1	1	12.0	15.0	0	15000	American Robin	amerob	0.2981	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_002400.WAV	12.0
+7	Spectrogram 1	1	12.0	15.0	0	15000	American Crow	amecro	0.1331	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_002400.WAV	12.0
+8	Spectrogram 1	1	15.0	18.0	0	15000	American Robin	amerob	0.2296	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_002400.WAV	15.0
+9	Spectrogram 1	1	18.0	21.0	0	15000	Eurasian Blackcap	blackc1	0.1020	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_002400.WAV	18.0
+10	Spectrogram 1	1	24.0	27.0	0	15000	Rameron Pigeon	rampig1	0.1390	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_002400.WAV	24.0
+11	Spectrogram 1	1	24.0	27.0	0	15000	Silvery-cheeked Hornbill	sichor1	0.1319	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_002400.WAV	24.0
+12	Spectrogram 1	1	27.0	30.0	0	15000	American Crow	amecro	0.4491	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_002400.WAV	27.0
+13	Spectrogram 1	1	30.0	33.0	0	15000	Eurasian Blackcap	blackc1	0.1751	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_002400.WAV	30.0
+14	Spectrogram 1	1	30.0	33.0	0	15000	Canada Goose	cangoo	0.1154	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_002400.WAV	30.0
+15	Spectrogram 1	1	33.0	36.0	0	15000	Cloud-forest Pygmy-Owl	clopyo1	0.5919	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_002400.WAV	33.0
+16	Spectrogram 1	1	33.0	36.0	0	15000	Northern Saw-whet Owl	nswowl	0.1766	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_002400.WAV	33.0
+17	Spectrogram 1	1	36.0	39.0	0	15000	Dusky Flycatcher	dusfly	0.1103	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_002400.WAV	36.0
+18	Spectrogram 1	1	39.0	42.0	0	15000	Eurasian Blackcap	blackc1	0.2338	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_002400.WAV	39.0
+19	Spectrogram 1	1	45.0	48.0	0	15000	Asian Brown Flycatcher	asbfly	0.1050	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_002400.WAV	45.0
+20	Spectrogram 1	1	48.0	51.0	0	15000	Red-breasted Flycatcher	rebfly	0.3032	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_002400.WAV	48.0
+21	Spectrogram 1	1	51.0	54.0	0	15000	Red-breasted Nuthatch	rebnut	0.2219	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_002400.WAV	51.0
+22	Spectrogram 1	1	51.0	54.0	0	15000	Cory's Shearwater	corshe	0.1689	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_002400.WAV	51.0
+23	Spectrogram 1	1	51.0	54.0	0	15000	European Pied Flycatcher	eupfly1	0.1460	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_002400.WAV	51.0
+24	Spectrogram 1	1	57.0	60.0	0	15000	Eurasian Blackcap	blackc1	0.6073	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_002400.WAV	57.0

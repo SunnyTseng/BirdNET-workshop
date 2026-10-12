@@ -1,0 +1,12 @@
+Selection	View	Channel	Begin Time (s)	End Time (s)	Low Freq (Hz)	High Freq (Hz)	Common Name	Species Code	Confidence	Begin Path	File Offset (s)
+1	Spectrogram 1	1	9.0	12.0	0	15000	American Crow	amecro	0.2540	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_055200.WAV	9.0
+2	Spectrogram 1	1	9.0	12.0	0	15000	Eastern Whip-poor-will	easwpw1	0.2145	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_055200.WAV	9.0
+3	Spectrogram 1	1	18.0	21.0	0	15000	Red-breasted Flycatcher	rebfly	0.9615	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_055200.WAV	18.0
+4	Spectrogram 1	1	24.0	27.0	0	15000	Great Cormorant	grecor	0.1149	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_055200.WAV	24.0
+5	Spectrogram 1	1	27.0	30.0	0	15000	American Robin	amerob	0.1381	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_055200.WAV	27.0
+6	Spectrogram 1	1	27.0	30.0	0	15000	Northern Saw-whet Owl	nswowl	0.1011	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_055200.WAV	27.0
+7	Spectrogram 1	1	30.0	33.0	0	15000	American Robin	amerob	0.1140	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_055200.WAV	30.0
+8	Spectrogram 1	1	36.0	39.0	0	15000	American Crow	amecro	0.3512	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_055200.WAV	36.0
+9	Spectrogram 1	1	36.0	39.0	0	15000	Wood Thrush	woothr	0.2797	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_055200.WAV	36.0
+10	Spectrogram 1	1	39.0	42.0	0	15000	Red-breasted Nuthatch	rebnut	0.1160	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_055200.WAV	39.0
+11	Spectrogram 1	1	48.0	51.0	0	15000	Red-breasted Flycatcher	rebfly	0.1776	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_055200.WAV	48.0

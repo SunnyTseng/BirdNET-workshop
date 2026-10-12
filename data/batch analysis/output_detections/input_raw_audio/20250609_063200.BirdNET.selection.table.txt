@@ -1,0 +1,17 @@
+Selection	View	Channel	Begin Time (s)	End Time (s)	Low Freq (Hz)	High Freq (Hz)	Common Name	Species Code	Confidence	Begin Path	File Offset (s)
+1	Spectrogram 1	1	12.0	15.0	0	15000	American Crow	amecro	0.3286	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_063200.WAV	12.0
+2	Spectrogram 1	1	15.0	18.0	0	15000	Northern Cardinal	norcar	0.2730	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_063200.WAV	15.0
+3	Spectrogram 1	1	15.0	18.0	0	15000	American Crow	amecro	0.1539	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_063200.WAV	15.0
+4	Spectrogram 1	1	21.0	24.0	0	15000	American Crow	amecro	0.4844	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_063200.WAV	21.0
+5	Spectrogram 1	1	21.0	24.0	0	15000	Great Cormorant	grecor	0.4524	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_063200.WAV	21.0
+6	Spectrogram 1	1	21.0	24.0	0	15000	Eastern Towhee	eastow	0.1162	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_063200.WAV	21.0
+7	Spectrogram 1	1	24.0	27.0	0	15000	American Crow	amecro	0.5084	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_063200.WAV	24.0
+8	Spectrogram 1	1	24.0	27.0	0	15000	Eastern Whip-poor-will	easwpw1	0.1540	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_063200.WAV	24.0
+9	Spectrogram 1	1	27.0	30.0	0	15000	White-throated Rail	whtrai1	0.1124	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_063200.WAV	27.0
+10	Spectrogram 1	1	27.0	30.0	0	15000	Great Cormorant	grecor	0.1014	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_063200.WAV	27.0
+11	Spectrogram 1	1	30.0	33.0	0	15000	Northern Cardinal	norcar	0.1603	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_063200.WAV	30.0
+12	Spectrogram 1	1	33.0	36.0	0	15000	Northern Cardinal	norcar	0.7192	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_063200.WAV	33.0
+13	Spectrogram 1	1	33.0	36.0	0	15000	American Crow	amecro	0.3858	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_063200.WAV	33.0
+14	Spectrogram 1	1	33.0	36.0	0	15000	Black-capped Chickadee	bkcchi	0.1444	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_063200.WAV	33.0
+15	Spectrogram 1	1	48.0	51.0	0	15000	Red-breasted Nuthatch	rebnut	0.1051	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_063200.WAV	48.0
+16	Spectrogram 1	1	57.0	60.0	0	15000	Northern Cardinal	norcar	0.1874	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_063200.WAV	57.0

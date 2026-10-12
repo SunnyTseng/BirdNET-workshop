@@ -1,0 +1,7 @@
+Selection	View	Channel	Begin Time (s)	End Time (s)	Low Freq (Hz)	High Freq (Hz)	Common Name	Species Code	Confidence	Begin Path	File Offset (s)
+1	Spectrogram 1	1	9.0	12.0	0	15000	Mountain Chickadee	mouchi	0.1041	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_042400.WAV	9.0
+2	Spectrogram 1	1	15.0	18.0	0	15000	Hooded Crow	hoocro1	0.1587	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_042400.WAV	15.0
+3	Spectrogram 1	1	27.0	30.0	0	15000	Rook	rook1	0.3852	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_042400.WAV	27.0
+4	Spectrogram 1	1	27.0	30.0	0	15000	Carrion Crow	carcro1	0.2645	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_042400.WAV	27.0
+5	Spectrogram 1	1	27.0	30.0	0	15000	Hooded Crow	hoocro1	0.2635	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_042400.WAV	27.0
+6	Spectrogram 1	1	57.0	60.0	0	15000	Great Cormorant	grecor	0.1020	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_042400.WAV	57.0

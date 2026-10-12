@@ -1,0 +1,17 @@
+Selection	View	Channel	Begin Time (s)	End Time (s)	Low Freq (Hz)	High Freq (Hz)	Common Name	Species Code	Confidence	Begin Path	File Offset (s)
+1	Spectrogram 1	1	0.0	3.0	0	15000	Northern Saw-whet Owl	nswowl	0.3070	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_022800.WAV	0.0
+2	Spectrogram 1	1	18.0	21.0	0	15000	Pale-billed Antpitta	pabant1	0.2382	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_022800.WAV	18.0
+3	Spectrogram 1	1	18.0	21.0	0	15000	Northern Saw-whet Owl	nswowl	0.1949	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_022800.WAV	18.0
+4	Spectrogram 1	1	18.0	21.0	0	15000	Crimson-rumped Toucanet	crrtou1	0.1115	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_022800.WAV	18.0
+5	Spectrogram 1	1	30.0	33.0	0	15000	Golden-crowned Kinglet	gockin	0.3803	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_022800.WAV	30.0
+6	Spectrogram 1	1	30.0	33.0	0	15000	Mountain Chickadee	mouchi	0.1075	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_022800.WAV	30.0
+7	Spectrogram 1	1	33.0	36.0	0	15000	Golden-crowned Kinglet	gockin	0.4267	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_022800.WAV	33.0
+8	Spectrogram 1	1	33.0	36.0	0	15000	Mountain Chickadee	mouchi	0.1438	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_022800.WAV	33.0
+9	Spectrogram 1	1	33.0	36.0	0	15000	Red-breasted Nuthatch	rebnut	0.1037	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_022800.WAV	33.0
+10	Spectrogram 1	1	39.0	42.0	0	15000	Northern Saw-whet Owl	nswowl	0.1371	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_022800.WAV	39.0
+11	Spectrogram 1	1	42.0	45.0	0	15000	Northern Saw-whet Owl	nswowl	0.1430	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_022800.WAV	42.0
+12	Spectrogram 1	1	45.0	48.0	0	15000	Flammulated Owl	flaowl	0.1218	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_022800.WAV	45.0
+13	Spectrogram 1	1	48.0	51.0	0	15000	Mountain Chickadee	mouchi	0.1210	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_022800.WAV	48.0
+14	Spectrogram 1	1	54.0	57.0	0	15000	Flammulated Owl	flaowl	0.1760	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_022800.WAV	54.0
+15	Spectrogram 1	1	54.0	57.0	0	15000	Great Horned Owl	grhowl	0.1010	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_022800.WAV	54.0
+16	Spectrogram 1	1	57.0	60.0	0	15000	Northern Saw-whet Owl	nswowl	0.3584	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_022800.WAV	57.0

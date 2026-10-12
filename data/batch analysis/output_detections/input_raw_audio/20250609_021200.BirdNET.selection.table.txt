@@ -1,0 +1,9 @@
+Selection	View	Channel	Begin Time (s)	End Time (s)	Low Freq (Hz)	High Freq (Hz)	Common Name	Species Code	Confidence	Begin Path	File Offset (s)
+1	Spectrogram 1	1	0.0	3.0	0	15000	Northern Saw-whet Owl	nswowl	0.3006	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_021200.WAV	0.0
+2	Spectrogram 1	1	9.0	12.0	0	15000	Northern Saw-whet Owl	nswowl	0.3485	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_021200.WAV	9.0
+3	Spectrogram 1	1	12.0	15.0	0	15000	American Robin	amerob	0.1002	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_021200.WAV	12.0
+4	Spectrogram 1	1	15.0	18.0	0	15000	Band-tailed Pigeon	batpig1	0.1754	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_021200.WAV	15.0
+5	Spectrogram 1	1	15.0	18.0	0	15000	American Robin	amerob	0.1730	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_021200.WAV	15.0
+6	Spectrogram 1	1	39.0	42.0	0	15000	Clark's Nutcracker	clanut	0.3788	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_021200.WAV	39.0
+7	Spectrogram 1	1	45.0	48.0	0	15000	Red-breasted Nuthatch	rebnut	0.2190	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_021200.WAV	45.0
+8	Spectrogram 1	1	54.0	57.0	0	15000	American Robin	amerob	0.1288	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_021200.WAV	54.0

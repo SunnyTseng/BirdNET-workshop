@@ -1,0 +1,19 @@
+Selection	View	Channel	Begin Time (s)	End Time (s)	Low Freq (Hz)	High Freq (Hz)	Common Name	Species Code	Confidence	Begin Path	File Offset (s)
+1	Spectrogram 1	1	0.0	3.0	0	15000	Northern Saw-whet Owl	nswowl	0.2143	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_071200.WAV	0.0
+2	Spectrogram 1	1	6.0	9.0	0	15000	Hermit Thrush	herthr	0.2676	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_071200.WAV	6.0
+3	Spectrogram 1	1	9.0	12.0	0	15000	American Crow	amecro	0.2556	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_071200.WAV	9.0
+4	Spectrogram 1	1	12.0	15.0	0	15000	American Crow	amecro	0.1669	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_071200.WAV	12.0
+5	Spectrogram 1	1	12.0	15.0	0	15000	Northern Cardinal	norcar	0.1161	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_071200.WAV	12.0
+6	Spectrogram 1	1	12.0	15.0	0	15000	Yellow-crowned Parrot	ywcpar	0.1038	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_071200.WAV	12.0
+7	Spectrogram 1	1	15.0	18.0	0	15000	Wood Thrush	woothr	0.1699	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_071200.WAV	15.0
+8	Spectrogram 1	1	15.0	18.0	0	15000	American Crow	amecro	0.1242	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_071200.WAV	15.0
+9	Spectrogram 1	1	18.0	21.0	0	15000	Eurasian Curlew	eurcur	0.3865	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_071200.WAV	18.0
+10	Spectrogram 1	1	27.0	30.0	0	15000	American Crow	amecro	0.4010	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_071200.WAV	27.0
+11	Spectrogram 1	1	27.0	30.0	0	15000	Wood Thrush	woothr	0.1545	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_071200.WAV	27.0
+12	Spectrogram 1	1	27.0	30.0	0	15000	Northern Cardinal	norcar	0.1143	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_071200.WAV	27.0
+13	Spectrogram 1	1	36.0	39.0	0	15000	Great Cormorant	grecor	0.1370	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_071200.WAV	36.0
+14	Spectrogram 1	1	45.0	48.0	0	15000	Double-crested Cormorant	doccor	0.1875	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_071200.WAV	45.0
+15	Spectrogram 1	1	48.0	51.0	0	15000	Great Cormorant	grecor	0.2207	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_071200.WAV	48.0
+16	Spectrogram 1	1	51.0	54.0	0	15000	Great Cormorant	grecor	0.4348	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_071200.WAV	51.0
+17	Spectrogram 1	1	57.0	60.0	0	15000	Northern Cardinal	norcar	0.6787	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_071200.WAV	57.0
+18	Spectrogram 1	1	57.0	60.0	0	15000	Great Cormorant	grecor	0.1725	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_071200.WAV	57.0

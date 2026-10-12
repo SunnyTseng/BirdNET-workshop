@@ -1,0 +1,30 @@
+Selection	View	Channel	Begin Time (s)	End Time (s)	Low Freq (Hz)	High Freq (Hz)	Common Name	Species Code	Confidence	Begin Path	File Offset (s)
+1	Spectrogram 1	1	0.0	3.0	0	15000	Great Cormorant	grecor	0.2658	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_025600.WAV	0.0
+2	Spectrogram 1	1	0.0	3.0	0	15000	Rufous-bellied Chachalaca	rubcha1	0.1305	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_025600.WAV	0.0
+3	Spectrogram 1	1	9.0	12.0	0	15000	Red-breasted Flycatcher	rebfly	0.7513	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_025600.WAV	9.0
+4	Spectrogram 1	1	12.0	15.0	0	15000	American Crow	amecro	0.5341	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_025600.WAV	12.0
+5	Spectrogram 1	1	12.0	15.0	0	15000	Red-breasted Flycatcher	rebfly	0.4059	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_025600.WAV	12.0
+6	Spectrogram 1	1	12.0	15.0	0	15000	Kentucky Warbler	kenwar	0.3119	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_025600.WAV	12.0
+7	Spectrogram 1	1	12.0	15.0	0	15000	European Pied Flycatcher	eupfly1	0.1643	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_025600.WAV	12.0
+8	Spectrogram 1	1	12.0	15.0	0	15000	Northern Cardinal	norcar	0.1558	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_025600.WAV	12.0
+9	Spectrogram 1	1	12.0	15.0	0	15000	Eastern Towhee	eastow	0.1199	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_025600.WAV	12.0
+10	Spectrogram 1	1	15.0	18.0	0	15000	Northern Cardinal	norcar	0.1573	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_025600.WAV	15.0
+11	Spectrogram 1	1	18.0	21.0	0	15000	Wood Thrush	woothr	0.1948	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_025600.WAV	18.0
+12	Spectrogram 1	1	18.0	21.0	0	15000	Eastern Towhee	eastow	0.1798	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_025600.WAV	18.0
+13	Spectrogram 1	1	18.0	21.0	0	15000	Green Catbird	grecat1	0.1730	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_025600.WAV	18.0
+14	Spectrogram 1	1	18.0	21.0	0	15000	Northern Cardinal	norcar	0.1404	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_025600.WAV	18.0
+15	Spectrogram 1	1	18.0	21.0	0	15000	American Crow	amecro	0.1230	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_025600.WAV	18.0
+16	Spectrogram 1	1	21.0	24.0	0	15000	Great Cormorant	grecor	0.3869	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_025600.WAV	21.0
+17	Spectrogram 1	1	24.0	27.0	0	15000	Great Cormorant	grecor	0.2376	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_025600.WAV	24.0
+18	Spectrogram 1	1	24.0	27.0	0	15000	Red-breasted Flycatcher	rebfly	0.1547	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_025600.WAV	24.0
+19	Spectrogram 1	1	27.0	30.0	0	15000	Red-breasted Flycatcher	rebfly	0.9527	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_025600.WAV	27.0
+20	Spectrogram 1	1	33.0	36.0	0	15000	Common Murre	commur	0.2009	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_025600.WAV	33.0
+21	Spectrogram 1	1	33.0	36.0	0	15000	Great Cormorant	grecor	0.1499	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_025600.WAV	33.0
+22	Spectrogram 1	1	36.0	39.0	0	15000	Green Catbird	grecat1	0.2312	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_025600.WAV	36.0
+23	Spectrogram 1	1	36.0	39.0	0	15000	Great Cormorant	grecor	0.1829	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_025600.WAV	36.0
+24	Spectrogram 1	1	39.0	42.0	0	15000	Red-breasted Flycatcher	rebfly	0.1134	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_025600.WAV	39.0
+25	Spectrogram 1	1	42.0	45.0	0	15000	Red-breasted Flycatcher	rebfly	0.9900	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_025600.WAV	42.0
+26	Spectrogram 1	1	42.0	45.0	0	15000	Japanese Tit	gretit4	0.1420	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_025600.WAV	42.0
+27	Spectrogram 1	1	42.0	45.0	0	15000	European Pied Flycatcher	eupfly1	0.1073	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_025600.WAV	42.0
+28	Spectrogram 1	1	48.0	51.0	0	15000	Northern Cardinal	norcar	0.1713	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_025600.WAV	48.0
+29	Spectrogram 1	1	57.0	60.0	0	15000	Red-breasted Flycatcher	rebfly	0.9924	D:\2026 May - Aug\BirdNET-workshop\data\batch analysis\input_raw_audio\20250609_025600.WAV	57.0
