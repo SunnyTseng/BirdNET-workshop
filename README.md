@@ -32,14 +32,15 @@ will be structured in three parts: (1) general computer vision concepts,
 ## Materials
 
 - Slides:
-- Practice dataset: The dataset comes from a single AudioMoth deployed
-  under a Great Cormorant colony of more than 3,000 breeding pairs in
-  Curonian Spit National Park, in Lithuania. It includes one day of
-  recordings, collected on 9 June 2025, with the recording schedule set
-  to 1 minute on and 3 minutes off. This schedule yielded 360 one-minute
-  recordings over the 24-hour period.
-  - Batch analysis:
-  - Validation:
+- Practice dataset comes from a single AudioMoth deployed under a Great
+  Cormorant colony of more than 3,000 breeding pairs in Curonian Spit
+  National Park, in Lithuania. It includes one day of recordings,
+  collected on 9 June 2025, with the recording schedule set to 1 minute
+  on and 3 minutes off. This schedule yielded 360 one-minute recordings
+  over the 24-hour period.
+  - [Batch
+    analysis](https://github.com/SunnyTseng/BirdNET-workshop/tree/master/data/batch%20analysis)
+  - [Validation](https://github.com/SunnyTseng/BirdNET-workshop/tree/master/data/segment%20and%20review)
 
 ## AI tools for bioacoustics
 
