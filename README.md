@@ -1,7 +1,5 @@
-# README
-
-
 # Bioacoustics in the AI world
+
 
 ## About
 

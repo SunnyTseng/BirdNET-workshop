@@ -1,9 +1,7 @@
 ---
-title: "README"
+title: "Bioacoustics in the AI world"
 format: gfm
 ---
-
-# Bioacoustics in the AI world
 
 
 ## About
