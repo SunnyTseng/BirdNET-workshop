@@ -2,3 +2,12 @@
 .Rhistory
 .RData
 .Ruserdata
+
+/.quarto/
+.Renviron
+
+
+/slides/audio_game
+/slides/audio
+
+/data/batch analysis/input_raw_audio
