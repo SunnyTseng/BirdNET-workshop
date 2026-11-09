@@ -11,7 +11,7 @@
 
   <meta name="author" content="Sunny Tseng, PhD">
   <meta name="dcterms.date" content="2026-11-09">
-  <title>Getting Started with BirdNET in R and GUI</title>
+  <title>Getting Started with BirdNET in GUI and R</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -224,7 +224,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Getting Started with BirdNET in R and GUI</h1>
+  <h1 class="title">Getting Started with BirdNET in GUI and R</h1>
   <p class="subtitle">The Last Birdbender</p>
 
 <div class="quarto-title-authors">
@@ -237,8 +237,13 @@ Sunny Tseng, PhD
 
   <p class="date">2026-11-09</p>
 </section>
-<section id="welcome-to-merida" class="slide level2">
-<h2>Welcome to Merida!</h2>
+<section id="house-keeping" class="slide level2">
+<h2>House keeping</h2>
+<ul>
+<li class="fragment"><p>WIFI: xyz (pwd: 12345678)</p></li>
+<li class="fragment"><p>Workshop Github:</p></li>
+<li class="fragment"><p>Data? Follow along? Breaks? Practice (blue and red tags)</p></li>
+</ul>
 </section>
 <section id="about-me" class="slide level2">
 <h2>About me</h2>
@@ -283,8 +288,9 @@ Sunny Tseng, PhD
 <section id="outline" class="slide level2">
 <h2>Outline</h2>
 <ol type="1">
-<li class="fragment">Communities and opportunities</li>
-<li class="fragment">Bird bioacoustics research in R</li>
+<li class="fragment">Fundamentals of BirdNET</li>
+<li class="fragment">Running BirdNET in GUI</li>
+<li class="fragment">BirdNET in R (<code>birdnetR</code>, <code>birdnetTools</code>)</li>
 </ol>
 <div class="fragment">
 <blockquote>
@@ -292,106 +298,19 @@ Sunny Tseng, PhD
 </blockquote>
 </div>
 </section>
+<section id="fundamentals-of-birdnet" class="title-slide slide level1 center">
+<h1>Fundamentals of BirdNET</h1>
+
+</section>
+
+<section id="running-birdnet-in-gui" class="title-slide slide level1 center">
+<h1>Running BirdNET in GUI</h1>
+
+</section>
+
 <section>
-<section id="r-communities-and-opportunities" class="title-slide slide level1 center">
-<h1>R communities and opportunities</h1>
-
-</section>
-<section id="ropensci" class="slide level2">
-<h2>rOpenSci</h2>
-<p>A non-profit initiative that supports open and reproducible research</p>
-<div class="fragment">
-<p><img data-src="images/clipboard-55839762.png"></p>
-</div>
-</section>
-<section id="their-main-programs" class="slide level2">
-<h2>Their main programs</h2>
-<ul>
-<li class="fragment"><p>Software peer review (pre-JOSS fast-track)</p></li>
-<li class="fragment"><p>The R universe project (binary package, CRAN)</p></li>
-</ul>
-<div class="fragment">
-<p><img data-src="images/clipboard-1697510592.png"></p>
-</div>
-</section>
-<section id="community-activities" class="slide level2">
-<h2>Community activities</h2>
-<ul>
-<li class="fragment"><p>Slack channels (new tools, jobs, gen-AI, etc.)</p></li>
-<li class="fragment"><p>Monthly co-working sessions (worldwide)</p></li>
-<li class="fragment"><p>Colleague coffee chats</p></li>
-</ul>
-<div class="fragment">
-<p><img data-src="images/clipboard-2529077636.png"></p>
-</div>
-</section>
-<section id="championship-program-2023" class="slide level2">
-<h2>Championship program 2023</h2>
-<ul>
-<li class="fragment"><p>10 month program, starting every year fall</p></li>
-<li class="fragment"><p>Scholarship for package development, with a paired mentor</p></li>
-<li class="fragment"><p>They fund you, and teach you build a package!</p></li>
-</ul>
-<div class="fragment">
-<p><img data-src="images/clipboard-669145108.png"></p>
-</div>
-</section>
-<section id="bbstaiwan" class="slide level2">
-<h2>bbsTaiwan</h2>
-<p>To streamline the retrieval and analysis of Taiwan Breeding Birds Survey data</p>
-
-<img data-src="images/clipboard-1154041828.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="bbstaiwan-1" class="slide level2">
-<h2>bbsTaiwan</h2>
-<p>This package can fetch the breeding birds survey data in one line of code</p>
-
-<img data-src="images/clipboard-4170122635.png" class="r-stretch"></section>
-<section id="bbstaiwan-2" class="slide level2">
-<h2>bbsTaiwan</h2>
-<p>Also provide functions to visualize the distribution of the species</p>
-
-<img data-src="images/clipboard-4198707832.png" class="r-stretch"></section>
-<section id="community-building" class="slide level2">
-<h2>Community building</h2>
-<p>Contribute back to my home country with open source package</p>
-
-<img data-src="images/clipboard-3760791946.png" class="r-stretch"></section>
-<section id="positconf-2024" class="slide level2">
-<h2>Posit::conf 2024</h2>
-<p>Opportunity scholar, workshops, super stars, news in R (Positron in 2024)!</p>
-
-<img data-src="images/clipboard-456793134.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="nserc-msfss-2025" class="slide level2">
-<h2>NSERC MSFSS 2025</h2>
-<p>A 3 month visiting scholar in Chemnitz, Germany, to build <code>birdnetTools</code></p>
-
-<img data-src="images/clipboard-1575136135.png" class="r-stretch"></section>
-<section id="r-consortium-2026" class="slide level2">
-<h2>R Consortium 2026</h2>
-<p>Grant for developers and <strong>community members</strong> working on projects that improve R’s infrastructure, packages, and community.</p>
-
-<img data-src="images/clipboard-386464564.png" class="r-stretch"></section>
-<section id="r-communities-and-opportunities-1" class="slide level2">
-<h2>R communities and opportunities</h2>
-<p>One opportunity is connected to the next one</p>
-<ul>
-<li class="fragment"><p>rOpenSci - community</p></li>
-<li class="fragment"><p>posit::conf - inspiration</p></li>
-<li class="fragment"><p>NSERC MSFSS - collaboration</p></li>
-<li class="fragment"><p>R Consortium - contribution</p></li>
-</ul>
-<div class="fragment">
-<ul>
-<li class="fragment"><p>R Ladies</p></li>
-<li class="fragment"><p>useR!</p></li>
-<li class="fragment"><p>OBF event award</p></li>
-<li class="fragment"><p>… do you know any more opportunities?</p></li>
-</ul>
-</div>
-</section></section>
-<section>
-<section id="bird-bioacoustics-in-r" class="title-slide slide level1 center">
-<h1>Bird bioacoustics in R</h1>
+<section id="birdnet-in-r" class="title-slide slide level1 center">
+<h1>BirdNET in R</h1>
 
 </section>
 <section id="r-packages-for-birds" class="slide level2">
@@ -863,14 +782,14 @@ Sunny Tseng, PhD
 <section id="whos-singing" class="slide level2">
 <h2><span class="emoji" data-emoji="video_game">🎮</span> Who’s singing?</h2>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb34" data-startfrom="697" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 696;"><span id="cb34-697"><a href=""></a>birds <span class="op">=</span> <span class="fu">transpose</span>(game)</span>
-<span id="cb34-698"><a href=""></a></span>
-<span id="cb34-699"><a href=""></a>viewof i <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">number</span>([<span class="dv">1</span><span class="op">,</span> birds<span class="op">.</span><span class="at">length</span>]<span class="op">,</span></span>
-<span id="cb34-700"><a href=""></a>  {<span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="vs">`Pick a number (1–</span><span class="sc">${</span>birds<span class="op">.</span><span class="at">length</span><span class="sc">}</span><span class="vs">)`</span>})</span>
-<span id="cb34-701"><a href=""></a></span>
-<span id="cb34-702"><a href=""></a>bird <span class="op">=</span> birds[i <span class="op">-</span> <span class="dv">1</span>]</span>
-<span id="cb34-703"><a href=""></a></span>
-<span id="cb34-704"><a href=""></a><span class="fu">html</span><span class="vs">`&lt;audio controls src="</span><span class="sc">${</span>bird<span class="op">.</span><span class="at">audio</span><span class="sc">}</span><span class="vs">" style="width:100%"&gt;&lt;/audio&gt;`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb34" data-startfrom="605" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 604;"><span id="cb34-605"><a href=""></a>birds <span class="op">=</span> <span class="fu">transpose</span>(game)</span>
+<span id="cb34-606"><a href=""></a></span>
+<span id="cb34-607"><a href=""></a>viewof i <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">number</span>([<span class="dv">1</span><span class="op">,</span> birds<span class="op">.</span><span class="at">length</span>]<span class="op">,</span></span>
+<span id="cb34-608"><a href=""></a>  {<span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="vs">`Pick a number (1–</span><span class="sc">${</span>birds<span class="op">.</span><span class="at">length</span><span class="sc">}</span><span class="vs">)`</span>})</span>
+<span id="cb34-609"><a href=""></a></span>
+<span id="cb34-610"><a href=""></a>bird <span class="op">=</span> birds[i <span class="op">-</span> <span class="dv">1</span>]</span>
+<span id="cb34-611"><a href=""></a></span>
+<span id="cb34-612"><a href=""></a><span class="fu">html</span><span class="vs">`&lt;audio controls src="</span><span class="sc">${</span>bird<span class="op">.</span><span class="at">audio</span><span class="sc">}</span><span class="vs">" style="width:100%"&gt;&lt;/audio&gt;`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-1-1" data-nodetype="declaration">
@@ -899,7 +818,7 @@ Sunny Tseng, PhD
 </div>
 </div>
 </div>
-<div class="sourceCode cell-code hidden" id="cb35" data-startfrom="706" data-source-offset="-229"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 705;"><span id="cb35-706"><a href=""></a><span class="fu">html</span><span class="vs">`&lt;img src="</span><span class="sc">${</span>bird<span class="op">.</span><span class="at">spec</span><span class="sc">}</span><span class="vs">" style="width:100%"&gt;`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb35" data-startfrom="614" data-source-offset="-229"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 613;"><span id="cb35-614"><a href=""></a><span class="fu">html</span><span class="vs">`&lt;img src="</span><span class="sc">${</span>bird<span class="op">.</span><span class="at">spec</span><span class="sc">}</span><span class="vs">" style="width:100%"&gt;`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-1-5" data-nodetype="expression">
@@ -907,7 +826,7 @@ Sunny Tseng, PhD
 </div>
 </div>
 </div>
-<div class="sourceCode cell-code hidden" id="cb36" data-startfrom="708" data-source-offset="-280"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 707;"><span id="cb36-708"><a href=""></a>detections <span class="op">=</span> <span class="fu">transpose</span>(birdnet)<span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">base</span> <span class="op">===</span> bird<span class="op">.</span><span class="at">base</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb36" data-startfrom="616" data-source-offset="-280"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 615;"><span id="cb36-616"><a href=""></a>detections <span class="op">=</span> <span class="fu">transpose</span>(birdnet)<span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">base</span> <span class="op">===</span> bird<span class="op">.</span><span class="at">base</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-1-6" data-nodetype="declaration">
@@ -920,11 +839,11 @@ Sunny Tseng, PhD
 <section id="and-the-answer-is" class="slide level2">
 <h2><span class="emoji" data-emoji="bird">🐦</span> And the answer is…</h2>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb37" data-startfrom="715" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 714;"><span id="cb37-715"><a href=""></a><span class="fu">md</span><span class="vs">`**Xeno-Canto label:** </span></span>
-<span id="cb37-716"><a href=""></a></span>
-<span id="cb37-717"><a href=""></a><span class="vs">*</span><span class="sc">${</span>bird<span class="op">.</span><span class="at">species</span><span class="sc">}</span><span class="vs">*, recorded by </span><span class="sc">${</span>bird<span class="op">.</span><span class="at">user_name</span><span class="sc">}</span><span class="vs"> (XC</span><span class="sc">${</span>bird<span class="op">.</span><span class="at">key</span><span class="sc">}</span><span class="vs">)</span></span>
-<span id="cb37-718"><a href=""></a></span>
-<span id="cb37-719"><a href=""></a><span class="vs">**BirdNET detection:**`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb37" data-startfrom="623" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 622;"><span id="cb37-623"><a href=""></a><span class="fu">md</span><span class="vs">`**Xeno-Canto label:** </span></span>
+<span id="cb37-624"><a href=""></a></span>
+<span id="cb37-625"><a href=""></a><span class="vs">*</span><span class="sc">${</span>bird<span class="op">.</span><span class="at">species</span><span class="sc">}</span><span class="vs">*, recorded by </span><span class="sc">${</span>bird<span class="op">.</span><span class="at">user_name</span><span class="sc">}</span><span class="vs"> (XC</span><span class="sc">${</span>bird<span class="op">.</span><span class="at">key</span><span class="sc">}</span><span class="vs">)</span></span>
+<span id="cb37-626"><a href=""></a></span>
+<span id="cb37-627"><a href=""></a><span class="vs">**BirdNET detection:**`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-2-1" data-nodetype="expression">
@@ -932,14 +851,14 @@ Sunny Tseng, PhD
 </div>
 </div>
 </div>
-<div class="sourceCode cell-code hidden" id="cb38" data-startfrom="721" data-source-offset="-118"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 720;"><span id="cb38-721"><a href=""></a>detections<span class="op">.</span><span class="at">length</span> <span class="op">===</span> <span class="dv">0</span></span>
-<span id="cb38-722"><a href=""></a>  <span class="op">?</span> <span class="fu">md</span><span class="vs">`No detection`</span></span>
-<span id="cb38-723"><a href=""></a>  <span class="op">:</span> Inputs<span class="op">.</span><span class="fu">table</span>(detections<span class="op">,</span> {</span>
-<span id="cb38-724"><a href=""></a>  <span class="dt">columns</span><span class="op">:</span> [<span class="st">"start"</span><span class="op">,</span> <span class="st">"end"</span><span class="op">,</span> <span class="st">"common_name"</span><span class="op">,</span> <span class="st">"scientific"</span><span class="op">,</span> <span class="st">"confidence"</span>]<span class="op">,</span></span>
-<span id="cb38-725"><a href=""></a>  <span class="dt">header</span><span class="op">:</span> {<span class="dt">start</span><span class="op">:</span> <span class="st">"Start (s)"</span><span class="op">,</span> <span class="dt">end</span><span class="op">:</span> <span class="st">"End (s)"</span><span class="op">,</span> <span class="dt">common_name</span><span class="op">:</span> <span class="st">"Common name"</span><span class="op">,</span></span>
-<span id="cb38-726"><a href=""></a>           <span class="dt">scientific</span><span class="op">:</span> <span class="st">"Scientific name"</span><span class="op">,</span> <span class="dt">confidence</span><span class="op">:</span> <span class="st">"Confidence"</span>}<span class="op">,</span></span>
-<span id="cb38-727"><a href=""></a>  <span class="dt">format</span><span class="op">:</span> {<span class="dt">confidence</span><span class="op">:</span> x <span class="kw">=&gt;</span> x<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">2</span>)}<span class="op">,</span></span>
-<span id="cb38-728"><a href=""></a>  <span class="dt">height</span><span class="op">:</span> <span class="dv">450</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb38" data-startfrom="629" data-source-offset="-118"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 628;"><span id="cb38-629"><a href=""></a>detections<span class="op">.</span><span class="at">length</span> <span class="op">===</span> <span class="dv">0</span></span>
+<span id="cb38-630"><a href=""></a>  <span class="op">?</span> <span class="fu">md</span><span class="vs">`No detection`</span></span>
+<span id="cb38-631"><a href=""></a>  <span class="op">:</span> Inputs<span class="op">.</span><span class="fu">table</span>(detections<span class="op">,</span> {</span>
+<span id="cb38-632"><a href=""></a>  <span class="dt">columns</span><span class="op">:</span> [<span class="st">"start"</span><span class="op">,</span> <span class="st">"end"</span><span class="op">,</span> <span class="st">"common_name"</span><span class="op">,</span> <span class="st">"scientific"</span><span class="op">,</span> <span class="st">"confidence"</span>]<span class="op">,</span></span>
+<span id="cb38-633"><a href=""></a>  <span class="dt">header</span><span class="op">:</span> {<span class="dt">start</span><span class="op">:</span> <span class="st">"Start (s)"</span><span class="op">,</span> <span class="dt">end</span><span class="op">:</span> <span class="st">"End (s)"</span><span class="op">,</span> <span class="dt">common_name</span><span class="op">:</span> <span class="st">"Common name"</span><span class="op">,</span></span>
+<span id="cb38-634"><a href=""></a>           <span class="dt">scientific</span><span class="op">:</span> <span class="st">"Scientific name"</span><span class="op">,</span> <span class="dt">confidence</span><span class="op">:</span> <span class="st">"Confidence"</span>}<span class="op">,</span></span>
+<span id="cb38-635"><a href=""></a>  <span class="dt">format</span><span class="op">:</span> {<span class="dt">confidence</span><span class="op">:</span> x <span class="kw">=&gt;</span> x<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">2</span>)}<span class="op">,</span></span>
+<span id="cb38-636"><a href=""></a>  <span class="dt">height</span><span class="op">:</span> <span class="dv">450</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-2-2" data-nodetype="expression">
