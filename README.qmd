@@ -4,25 +4,28 @@ subtitle: "An Open-Source Algorithm for Identifying Bird Species from Audio Reco
 format: gfm
 ---
 
-Hello, welcome, and thank you for your interest in the BirdNET workshop! This repository is the central hub for the BirdNET workshop in IOC 2026. It contains the key information and all the materials I will use during the session.
+Hello! Welcome and thank you for your interest in the BirdNET workshop! This repository is the central hub for the BirdNET workshop in IOC 2026. It contains the key information and all the materials I will use during the session.
 
 ## About
 
--   Instructor: [Sunny Tseng](https://sunnytseng.ca/), PhD
+-   Instructor: [Sunny Tseng, PhD](https://sunnytseng.ca/)
 -   Date: Nov. 30 2026 (Monday)
 -   Time: 13:00 - 15:00 (local time)
 -   Location: Yucatán International Congress Center, Merida (room to be confirmed)
 -   Cost: Free
 -   Audience: all IOC participants
 
-## Introduction
+## What will be covered
+
+
+`birdnetR` is the R interface to BirdNET, and `birdnetTools` provides tools for processing and validating BirdNET output.
 
 Computer vision, a form of artificial intelligence, is transforming how we extract species detections from large ecological datasets. This workshop will focus on the task of species classification from image and audio data, concentrating specifically on wildlife camera traps and acoustic recorders, although the general principles are applicable to other data modalities. In the workshop, we will cover general concepts in computer vision, including how to evaluate and critically assess model performance. We will then discuss practical tools for implementing computer vision workflows, including how to choose among available options, and demonstrate the use of two popular models: SpeciesNet (for camera trap images) and BirdNET (for bioacoustics data). The workshop will be structured in three parts: (1) general computer vision concepts, (2) camera trap data processing, and (3) bioacoustics data processing.
 
 
 
 
-## Pre-workshop Preparation
+## Pre-workshop preparation
 
 To make sure the workshop goes smoothly and everyone gets the most out of it, please complete the steps below **before** the workshop. They take less than 20 minutes in total, and they will save us a lot of time. The internet connection at the venue may also be limited if everyone downloads software at once.
 
@@ -39,9 +42,38 @@ Updating RStudio / Positron is optional, but a recent version is recommended.
 - If you are using Positron, instead of RStudio, as your IDE, you can download the latest version from [Positron website](https://positron.posit.co/download.html).
 
 
-### 3. Install the `birdnetR` and `birdnetTools` packages
 
-Run the following in the R console:
+### 3. Install the `birdnetR` package
+
+Run one of the following in the R console. 
+
+1. You could install the released version from CRAN:
+
+```r
+install.packages("birdnetR")
+```
+
+2. **or** install the development version from GitHub with:
+
+```r
+# install.packages("pak")
+pak::pak("birdnet-team/birdnetR")
+```
+
+Note that Python dependencies are installed on demand, meaning they are installed when you use them for the first time. This will result in longer initial setup. You could refer to the [birdnetR github page](https://github.com/birdnet-team/birdnetR/tree/main) for more information. To check that the installation worked, run:
+
+```r
+library(birdnetR)
+```
+
+If you get no errors, you're all set.
+
+
+### 4. Install the `birdnetTools` package
+
+Run one of the following in the R console. 
+
+1. You could install the released version from r-universe:
 
 ```r
 options(repos = c(
@@ -49,15 +81,19 @@ options(repos = c(
   CRAN = "https://cloud.r-project.org"
 ))
 
-install.packages(c("birdnetR", "birdnetTools"))
+install.packages("birdnetTools")
 ```
 
-`birdnetR` is the R interface to BirdNET, and `birdnetTools` provides tools for processing and validating BirdNET output. [If `birdnetR` needs an extra setup step, e.g. `birdnetR::install_birdnet()`, add it here.]
-
-To check that the installation worked, run:
+2. **or** install the development version from GitHub with:
 
 ```r
-library(birdnetR)
+# install.packages("pak")
+pak::pak("birdnet-team/birdnetTools")
+```
+
+The installation should take no longer than 5 mins. To check that the installation worked, run:
+
+```r
 library(birdnetTools)
 ```
 
@@ -65,9 +101,14 @@ If you get no errors, you're all set.
 
 
 
-### Having trouble?
+## Contact and contribution
 
 If any of above installation fails, please open an issue in this repo, or send me an email, and I'll help you sort it out.
+
+
+
+
+## AI disclosure
 
 
 

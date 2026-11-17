@@ -1,14 +1,14 @@
 # Using BirdNET in R
 
 
-Hello, welcome, and thank you for your interest in the BirdNET workshop!
+Hello! Welcome and thank you for your interest in the BirdNET workshop!
 This repository is the central hub for the BirdNET workshop in IOC 2026.
 It contains the key information and all the materials I will use during
 the session.
 
 ## About
 
-- Instructor: [Sunny Tseng](https://sunnytseng.ca/), PhD
+- Instructor: [Sunny Tseng, PhD](https://sunnytseng.ca/)
 - Date: Nov. 30 2026 (Monday)
 - Time: 13:00 - 15:00 (local time)
 - Location: Yucatán International Congress Center, Merida (room to be
@@ -16,7 +16,10 @@ the session.
 - Cost: Free
 - Audience: all IOC participants
 
-## Introduction
+## What will be covered
+
+`birdnetR` is the R interface to BirdNET, and `birdnetTools` provides
+tools for processing and validating BirdNET output.
 
 Computer vision, a form of artificial intelligence, is transforming how
 we extract species detections from large ecological datasets. This
@@ -32,7 +35,7 @@ camera trap images) and BirdNET (for bioacoustics data). The workshop
 will be structured in three parts: (1) general computer vision concepts,
 (2) camera trap data processing, and (3) bioacoustics data processing.
 
-## Pre-workshop Preparation
+## Pre-workshop preparation
 
 To make sure the workshop goes smoothly and everyone gets the most out
 of it, please complete the steps below **before** the workshop. They
@@ -61,9 +64,40 @@ recommended.
   download the latest version from [Positron
   website](https://positron.posit.co/download.html).
 
-### 3. Install the `birdnetR` and `birdnetTools` packages
+### 3. Install the `birdnetR` package
 
-Run the following in the R console:
+Run one of the following in the R console.
+
+1.  You could install the released version from CRAN:
+
+``` r
+install.packages("birdnetR")
+```
+
+2.  **or** install the development version from GitHub with:
+
+``` r
+# install.packages("pak")
+pak::pak("birdnet-team/birdnetR")
+```
+
+Note that Python dependencies are installed on demand, meaning they are
+installed when you use them for the first time. This will result in
+longer initial setup. You could refer to the [birdnetR github
+page](https://github.com/birdnet-team/birdnetR/tree/main) for more
+information. To check that the installation worked, run:
+
+``` r
+library(birdnetR)
+```
+
+If you get no errors, you’re all set.
+
+### 4. Install the `birdnetTools` package
+
+Run one of the following in the R console.
+
+1.  You could install the released version from r-universe:
 
 ``` r
 options(repos = c(
@@ -71,27 +105,31 @@ options(repos = c(
   CRAN = "https://cloud.r-project.org"
 ))
 
-install.packages(c("birdnetR", "birdnetTools"))
+install.packages("birdnetTools")
 ```
 
-`birdnetR` is the R interface to BirdNET, and `birdnetTools` provides
-tools for processing and validating BirdNET output. \[If `birdnetR`
-needs an extra setup step, e.g. `birdnetR::install_birdnet()`, add it
-here.\]
-
-To check that the installation worked, run:
+2.  **or** install the development version from GitHub with:
 
 ``` r
-library(birdnetR)
+# install.packages("pak")
+pak::pak("birdnet-team/birdnetTools")
+```
+
+The installation should take no longer than 5 mins. To check that the
+installation worked, run:
+
+``` r
 library(birdnetTools)
 ```
 
 If you get no errors, you’re all set.
 
-### Having trouble?
+## Contact and contribution
 
 If any of above installation fails, please open an issue in this repo,
 or send me an email, and I’ll help you sort it out.
+
+## AI disclosure
 
 ## Materials
 
