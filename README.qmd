@@ -31,8 +31,12 @@ To make sure the workshop goes smoothly and everyone gets the most out of it, pl
 Some of the packages we will use may not work with older versions of R. If your R version is older than 4.3.0, please update to the latest version. You can check your version by running `R.version.string` in the R console. To update, download the latest version from [CRAN](https://cran.r-project.org/).
 
 
-### 2. Update RStudio (optional)
-Updating RStudio is optional, but a recent version is recommended. You can download the latest version from [Posit](https://posit.co/download/rstudio-desktop/).
+### 2. Update RStudio / Positron (optional)
+Updating RStudio / Positron is optional, but a recent version is recommended.
+
+- If you are using RStudio as your main IDE, you can download the latest version from [RStudio website](https://docs.posit.co/ide/user/download.html).
+
+- If you are using Positron, instead of RStudio, as your IDE, you can download the latest version from [Positron website](https://positron.posit.co/download.html).
 
 
 ### 3. Install the `birdnetR` and `birdnetTools` packages
