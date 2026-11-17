@@ -1,15 +1,20 @@
-# Bioacoustics in the AI world
+# Using BirdNET in R
 
+
+Hello, welcome, and thank you for your interest in the BirdNET workshop!
+This repository is the central hub for the BirdNET workshop in IOC 2026.
+It contains the key information and all the materials I will use during
+the session.
 
 ## About
 
-Instructors: Dr. Cara Appel, Dr. Sunny Tseng
-
-- Date: Tuesday Oct 13th
-- Time: 10:30 am - 1:30pm \*includes light lunch
-- Location: BRC Multipurpose Room (1014)
-- Cost: Free – limited seats
-- Who: UBC students, staff, faculty, affiliates
+- Instructor: [Sunny Tseng](https://sunnytseng.ca/), PhD
+- Date: Nov. 30 2026 (Monday)
+- Time: 13:00 - 15:00 (local time)
+- Location: Yucatán International Congress Center, Merida (room to be
+  confirmed)
+- Cost: Free
+- Audience: all IOC participants
 
 ## Introduction
 
@@ -26,6 +31,60 @@ options, and demonstrate the use of two popular models: SpeciesNet (for
 camera trap images) and BirdNET (for bioacoustics data). The workshop
 will be structured in three parts: (1) general computer vision concepts,
 (2) camera trap data processing, and (3) bioacoustics data processing.
+
+## Pre-workshop Preparation
+
+To make sure the workshop goes smoothly and everyone gets the most out
+of it, please complete the steps below **before** the workshop. They
+take less than 20 minutes in total, and they will save us a lot of time.
+The internet connection at the venue may also be limited if everyone
+downloads software at once.
+
+### 1. Update R
+
+Some of the packages we will use may not work with older versions of R.
+If your R version is older than 4.3.0, please update to the latest
+version. You can check your version by running `R.version.string` in the
+R console. To update, download the latest version from
+[CRAN](https://cran.r-project.org/).
+
+### 2. Update RStudio (optional)
+
+Updating RStudio is optional, but a recent version is recommended. You
+can download the latest version from
+[Posit](https://posit.co/download/rstudio-desktop/).
+
+### 3. Install the `birdnetR` and `birdnetTools` packages
+
+Run the following in the R console:
+
+``` r
+options(repos = c(
+  sunnytseng = "https://sunnytseng.r-universe.dev",
+  CRAN = "https://cloud.r-project.org"
+))
+
+install.packages(c("birdnetR", "birdnetTools"))
+```
+
+`birdnetR` is the R interface to BirdNET, and `birdnetTools` provides
+tools for processing and validating BirdNET output. \[If `birdnetR`
+needs an extra setup step, e.g. `birdnetR::install_birdnet()`, add it
+here.\]
+
+To check that the installation worked, run:
+
+``` r
+library(birdnetR)
+library(birdnetTools)
+```
+
+If you get no errors, you’re all set.
+
+### Having trouble?
+
+If any of above installation fails, please open an issue in this repo,
+or send me an email, and I’ll help you sort it out.
 
 ## Materials
 

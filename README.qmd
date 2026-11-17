@@ -1,33 +1,79 @@
 ---
-title: "Bioacoustics in the AI world"
+title: "Using BirdNET in R"
+subtitle: "An Open-Source Algorithm for Identifying Bird Species from Audio Recordings"
 format: gfm
 ---
 
+Hello, welcome, and thank you for your interest in the BirdNET workshop! This repository is the central hub for the BirdNET workshop in IOC 2026. It contains the key information and all the materials I will use during the session.
 
 ## About
 
-Instructors: Dr. Cara Appel, Dr. Sunny Tseng
-
--   Date: Tuesday Oct 13th
--   Time: 10:30 am - 1:30pm \*includes light lunch
--   Location: BRC Multipurpose Room (1014)
--   Cost: Free – limited seats
--   Who: UBC students, staff, faculty, affiliates
-
+-   Instructor: [Sunny Tseng](https://sunnytseng.ca/), PhD
+-   Date: Nov. 30 2026 (Monday)
+-   Time: 13:00 - 15:00 (local time)
+-   Location: Yucatán International Congress Center, Merida (room to be confirmed)
+-   Cost: Free
+-   Audience: all IOC participants
 
 ## Introduction
 
 Computer vision, a form of artificial intelligence, is transforming how we extract species detections from large ecological datasets. This workshop will focus on the task of species classification from image and audio data, concentrating specifically on wildlife camera traps and acoustic recorders, although the general principles are applicable to other data modalities. In the workshop, we will cover general concepts in computer vision, including how to evaluate and critically assess model performance. We will then discuss practical tools for implementing computer vision workflows, including how to choose among available options, and demonstrate the use of two popular models: SpeciesNet (for camera trap images) and BirdNET (for bioacoustics data). The workshop will be structured in three parts: (1) general computer vision concepts, (2) camera trap data processing, and (3) bioacoustics data processing.
 
 
+
+
+## Pre-workshop Preparation
+
+To make sure the workshop goes smoothly and everyone gets the most out of it, please complete the steps below **before** the workshop. They take less than 20 minutes in total, and they will save us a lot of time. The internet connection at the venue may also be limited if everyone downloads software at once.
+
+
+### 1. Update R
+Some of the packages we will use may not work with older versions of R. If your R version is older than 4.3.0, please update to the latest version. You can check your version by running `R.version.string` in the R console. To update, download the latest version from [CRAN](https://cran.r-project.org/).
+
+
+### 2. Update RStudio (optional)
+Updating RStudio is optional, but a recent version is recommended. You can download the latest version from [Posit](https://posit.co/download/rstudio-desktop/).
+
+
+### 3. Install the `birdnetR` and `birdnetTools` packages
+
+Run the following in the R console:
+
+```r
+options(repos = c(
+  sunnytseng = "https://sunnytseng.r-universe.dev",
+  CRAN = "https://cloud.r-project.org"
+))
+
+install.packages(c("birdnetR", "birdnetTools"))
+```
+
+`birdnetR` is the R interface to BirdNET, and `birdnetTools` provides tools for processing and validating BirdNET output. [If `birdnetR` needs an extra setup step, e.g. `birdnetR::install_birdnet()`, add it here.]
+
+To check that the installation worked, run:
+
+```r
+library(birdnetR)
+library(birdnetTools)
+```
+
+If you get no errors, you're all set.
+
+
+
+### Having trouble?
+
+If any of above installation fails, please open an issue in this repo, or send me an email, and I'll help you sort it out.
+
+
+
+
 ## Materials
 
-- [Slides](https://canva.link/20vf2q3n2kkflju): https://canva.link/20vf2q3n2kkflju  
-- Practice dataset comes from a single AudioMoth deployed under a Great Cormorant colony of more than 3,000 breeding pairs in Curonian Spit National Park, in Lithuania. It includes one day of recordings, collected on 9 June 2025, with the recording schedule set to 1 minute on and 3 minutes off. This schedule yielded 360 one-minute recordings over the 24-hour period.
-  - [Batch analysis](https://github.com/SunnyTseng/BirdNET-workshop/tree/master/data/batch%20analysis)
-  - [Validation](https://github.com/SunnyTseng/BirdNET-workshop/tree/master/data/segment%20and%20review)
-
-
+-   [Slides](https://canva.link/20vf2q3n2kkflju): https://canva.link/20vf2q3n2kkflju\
+-   Practice dataset comes from a single AudioMoth deployed under a Great Cormorant colony of more than 3,000 breeding pairs in Curonian Spit National Park, in Lithuania. It includes one day of recordings, collected on 9 June 2025, with the recording schedule set to 1 minute on and 3 minutes off. This schedule yielded 360 one-minute recordings over the 24-hour period.
+    -   [Batch analysis](https://github.com/SunnyTseng/BirdNET-workshop/tree/master/data/batch%20analysis)
+    -   [Validation](https://github.com/SunnyTseng/BirdNET-workshop/tree/master/data/segment%20and%20review)
 
 ## AI tools for bioacoustics
 
