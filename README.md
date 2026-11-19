@@ -2,17 +2,16 @@
 
 
 Hello! Welcome and thank you for your interest in the BirdNET workshop!
-This repository is the central hub for the BirdNET workshop in IOC 2026.
-It contains the key information and all the materials I will use during
-the session.
+This repository is the central hub for the BirdNET workshop in [IOC
+2026](https://iocongress2026.com/). It contains the key information and
+all the materials I will use during the session.
 
 ## About
 
 - Instructor: [Sunny Tseng, PhD](https://sunnytseng.ca/)
 - Date: Nov. 30 2026 (Monday)
 - Time: 13:00 - 15:00 (local time)
-- Location: Yucatán International Congress Center, Merida (room to be
-  confirmed)
+- Location: Room 25A, Yucatán International Congress Center, Merida
 - Cost: Free
 - Audience: all IOC participants
 

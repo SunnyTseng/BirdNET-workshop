@@ -23,6 +23,18 @@ execute:
 from: markdown+emoji  
 ---
 
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+library(tidyverse)
+library(here)
+library(DT)
+```
+
+
+
 ## House keeping 
 
 - WIFI: xyz (pwd: 12345678)
@@ -85,9 +97,9 @@ Artwork by [\@allison_horst](https://allisonhorst.com/), CC BY 4.0
 
 ## Outline
 
-1.  Fundamentals of BirdNET
-2.  Running BirdNET in GUI
-3.  BirdNET in R (`birdnetR`, `birdnetTools`)
+1. Analyze audios with BirdNET in R (`birdnetR`, `birdnetTools`)
+2. Validate BirdNET detections in R (`birdnetTools`)
+3. Play a game with BirdNET, in R!
 
 . . .
 
@@ -95,77 +107,86 @@ Artwork by [\@allison_horst](https://allisonhorst.com/), CC BY 4.0
 
 
 
-# Fundamentals of BirdNET
+# Analyze audios with BirdNET in R 
+
+# Validate BirdNET detections in R
 
 
-# Running BirdNET in GUI
 
 
-# BirdNET in R
+# Play a game with BirdNET, in R!
 
-```{r}
-#| echo: false
-#| warning: false
-#| message: false
 
-library(tidyverse)
-library(here)
-library(DT)
-```
+## Beat the BirdNET 🐦
 
-## R Packages for birds
+A bird guessing game, designed with BirdNET
 
-There are SO many R packages developed for birds
+- We are all here to enjoy the birds
+- We already learned how to use BirdNET
+- Now let's use BirdNET to learn some birds of Mérida!
 
-. . .
 
-<iframe src="https://beausoleilmo.github.io/Ornithometrics-ctv/Ornithometrics.html" width="100%" height="550" style="border: none;">
 
-</iframe>
+## How I made the game
 
-## Communication and acoustic analysis {.smaller}
+**Step 1.** Explore Mérida birds on Xeno-Canto → `suwo`
 
-| Step | Package | What it does |
-|-------------------|------------------|-----------------------------------|
-| **Get recordings** | `suwo` | Search & download Xeno-Canto, Macaulay, iNaturalist |
-| **Read / convert** | `tuneR` | Read MP3/WAV, resample, convert |
-|  | `av` | Read MP3/WAV, resample, convert |
-| **Visualize / measure** | `seewave` | Spectrograms, acoustic measurements |
-|  | `warbleR` | Spectrograms, acoustic measurements |
-|  | `dynaSpec` | Animated, scrolling spectrograms |
-| **Signals detection / identification** | `ohun` | Automatic detection, template matching |
-|  | `monitoR` | Automatic detection, template matching |
-|  | `birdnetR` | BirdNET in R (Python under the hood) |
-|  | `birdnetTools` | Filter, validate, visualize BirdNET output |
-| **Soundscapes index** | `soundecology` | Acoustic indices (ACI, NDSI, ...) |
+**Step 2.** Read and check the audio in R → `tuneR`, `seewave`
 
-## General workflow
+**Step 3.** Identify species with BirdNET → `birdnetR`
 
-This is a simplified research workflow, but carries the main steps of a bioacoustics project
 
-. . .
 
-Step 1. Explore bird songs around the world (`suwo`)
 
-. . .
 
-Step 2. Read and check audio in R (`tuneR`, `seewave`)
-
-. . .
-
-Step 3. Identify species with BirdNET (`birdnetR`, `birdnetTools`)
-
-. . .
-
-> Let's play **Name that bird!** :bird:
-
-## Step 1: Explore bird songs
+## Step 1: Explore bird sounds on Xeno-Canto
 
 [Xeno-Canto](https://xeno-canto.org): \~1 million wildlife recordings, shared under CC licenses
 
 ![](images/clipboard-2244126803.png)
 
-## The one, and only one function
+## Query Merida recordings
+
+Use the `query_xenocanto()` function from the `suwo` package:
+
+```{r}
+library(suwo)
+```
+
+
+Merida area, songs, high quality recordings (109 recordings from 47 species):
+
+```{r}
+#| cache: true
+Merida_birds <- query_xenocanto(species = 'lat: "20.97" lon: "-89.61" type: "song" q:">C"')
+```
+
+
+
+```{r}
+#| echo: false
+
+Merida_birds |>
+mutate(number = row_number()) |>
+select(number, key, species, date, time, user_name, locality, file_extension) |>
+datatable(
+  options = list(
+    scrollX = TRUE,      # horizontal scroll (many columns)
+    scrollY = "400px",   # vertical scroll within this height
+    paging = FALSE,      # show all rows in the scroll box
+    dom = "ft"           # just the filter box + table
+  ),
+  class = "compact",
+  rownames = FALSE
+)
+```
+
+
+
+
+
+
+# Others
 
 . . .
 
@@ -201,36 +222,6 @@ datatable(query,
 )
 ```
 
-## API in Xeno-Canto
-
-. . .
-
-:confounded: You will need API key in the first time
-
-```{r}
-#| eval: false
-query <- query_xenocanto(species = "Haliaeetus leucocephalus")
-```
-
-```{r}
-#| error: true
-#| echo: false
-withr::with_envvar(c(XC_API_KEY = NA), {
-  query <- query_xenocanto(species = "Haliaeetus leucocephalus")
-})
-```
-
-. . .
-
-:hand_over_mouth: Register on Xeno-Canto –\> copy API –\> set in R
-
-```{r}
-#| eval: false
-
-Sys.setenv(XC_API_KEY = "YOUR_API_KEY_HERE")
-```
-
-![](images/clipboard-2550044187.png)
 
 ## Additional search tags {.smaller}
 
@@ -648,6 +639,8 @@ Real projects: hundreds of recorders × months of audio. Enter `birdnetTools`
 2.  Packages for bird bioacoustics
 3.  The game for rainy Vancouver
 4.  R is fun!
+
+Thanks for the "East and Southeast Asia Travel Fund for Ornithology, from IOU"
 
 . . .
 
