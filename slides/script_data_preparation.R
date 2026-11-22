@@ -82,27 +82,20 @@ as.data.frame(predictions) |>
 
 # play a game -------------------------------------------------------------
 
-# vancouver recordings
-vancouver_birds <- query_xenocanto(species = 'lat: "49.26" lon: "-123.11" q:"A" type: "song"')
+# local recordings
+Merida_birds <- query_xenocanto(species = 'lat: "20.97" lon: "-89.61" type: "song" q:">C"')
 
-vancouver_birds |>
+Merida_birds |>
   pull(species) |>
   unique()
 
-# select 2 recordings from each species
-set.seed(123)
-vancouver_birds_selected <- vancouver_birds |>
-  group_by(species) |>
-  slice_sample(n = 2) |>
-  ungroup()
-
 
 # pre download (saved to "presentation slides/audio_game")
-audio_game_dir <- here("presentation slides", "audio_game")
+audio_game_dir <- here("slides", "audio_game")
 dir.create(audio_game_dir, showWarnings = FALSE)
 
-download_media(metadata = vancouver_birds_selected,
-               path = audio_game_dir)
+# download_media(metadata = Merida_birds,
+#                path = audio_game_dir)
 
 
 
@@ -112,35 +105,35 @@ download_media(metadata = vancouver_birds_selected,
 
 
 # pre-create the spectrograms
+audio_game_spectrogram_dir <- here("slides", "audio_game_spectrogram")
+dir.create(audio_game_spectrogram_dir, showWarnings = FALSE)
 
-for (i in 1:nrow(vancouver_birds_selected)) {
+for (i in 1:nrow(Merida_birds)) {
 
-  # construct the file name
-  audio_path_raw <- paste0(str_replace_all(vancouver_birds_selected[i,]$species, " ", "_"),
+  audio_path_raw <- paste0(str_replace_all(Merida_birds[i,]$species, " ", "_"),
                            "-XC",
-                           vancouver_birds_selected[i,]$key)
+                           Merida_birds[i,]$key)
 
-  # file name for audio
-  audio_path <- audio_path <- paste0(audio_path_raw,
-                                     ".",
-                                     vancouver_birds_selected[i,]$file_extension)
+  audio_path <- paste0(audio_path_raw, ".", Merida_birds[i,]$file_extension)
 
-  # read in the audio
   ext <- tolower(tools::file_ext(audio_path))
 
   if (ext == "mp3") {
-    audio <- readMP3(here("presentation slides", "audio_game", audio_path))
+    audio <- readMP3(paste0(audio_game_dir, "/", audio_path))
   } else if (ext == "wav") {
-    audio <- readWave(here("presentation slides", "audio_game", audio_path))
+    audio <- readWave(paste0(audio_game_dir, "/", audio_path))
   }
 
-  # save the image
-  png(here("presentation slides", "audio_game_spectrogram", paste0(audio_path_raw, ".png")),
+  # highest usable frequency in kHz, and clip length in case it's under 10 s
+  nyquist_khz <- audio@samp.rate / 2000
+  dur <- length(audio@left) / audio@samp.rate
+
+  png(paste0(audio_game_spectrogram_dir, "/", audio_path_raw, ".png"),
       width = 1600, height = 600, res = 150)
 
   audio |>
-    extractWave(from = 0, to = 10, xunit = "time") |>
-    spectro(flim = c(1, 10), fastdisp = TRUE, scale = FALSE)
+    extractWave(from = 0, to = min(10, dur), xunit = "time") |>
+    spectro(flim = c(1, min(10, nyquist_khz)), fastdisp = TRUE, scale = FALSE)
 
   dev.off()
 }

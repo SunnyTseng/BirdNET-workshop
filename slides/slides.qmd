@@ -33,6 +33,20 @@ library(here)
 library(DT)
 ```
 
+```{r}
+#| include: false
+show_table <- function(df, height = "200px") {
+  df |>
+    select(-input) |>
+    datatable(
+      options = list(scrollX = TRUE, scrollY = height,
+                     scrollCollapse = TRUE, paging = FALSE, dom = "t"),
+      class = "compact", rownames = FALSE
+    )
+}
+```
+
+
 ## House keeping
 
 -   WIFI: xyz (pwd: 12345678)
@@ -109,7 +123,7 @@ Artwork by [\@allison_horst](https://allisonhorst.com/), CC BY 4.0
 - Copy code chunk instead of typing
 
 
-# Analyze audios with BirdNET in R
+# Analyze audio with BirdNET in R
 
 ## Bioacoustics workflow
 
@@ -131,7 +145,7 @@ The AI toolkit for conservation bioacoustics
 
 -   Developed by Cornell Lab of Ornithology **AND** Chemnitz University of Technology
 
--   Main developer is Stefan Kahl
+-   Led by Stefan Kahl
 
 -   First publication in 2021
 
@@ -139,17 +153,23 @@ The AI toolkit for conservation bioacoustics
 
 -   Trained on [Macaulay library](https://www.macaulaylibrary.org/) and [Xeno-Canto](https://xeno-canto.org/)
 
--   Identify 6,522 classes worldwide (model v2.4)
+-   Identifies 6,522 classes worldwide (model v2.4)
 
 -   Open source on Github [BirdNET-Team](https://github.com/birdnet-team)
 
+
 ## How does BirdNET work?
 
-A four steps architecture
+![](images/clipboard-985236358.png)
+
+
+## How does BirdNET work? (con'd)
+
+A four-step architecture
 
 1.  Capture
 2.  Spectrogram
-    -   It splits audio into 3-secs segments
+    -   It splits audio into 3-second segments
 
     -   Segments are converted into spectrograms (images)
 3.  Neural Net
@@ -159,11 +179,11 @@ A four steps architecture
 4.  Result
     -   The output is a table, with **detected species** and **detection confidence**
 
-    -   Output can be filtered by geofencing (distribution model by eBird)
+    -   Geofencing output (species occurrence model based on eBird data)
 
-## How does BirdNET work?
 
-![](images/clipboard-985236358.png)
+
+
 
 ## An example is worth a thousand words
 
@@ -201,7 +221,7 @@ predictions <- predict(model, audio_path)
 
 ```{r}
 #| echo: false
-#| messages: false
+#| message: false
 
 if (file.exists("birdnet_results_single_analysis.rds")) {
   df <- readRDS("birdnet_results_single_analysis.rds")
@@ -273,7 +293,7 @@ predictions |> as.data.frame()
 
 ```{r}
 #| echo: false
-#| messages: false
+#| message: false
 
 df <- readRDS("birdnet_results_single_analysis.rds")
 
@@ -294,24 +314,12 @@ datatable(
 
 > "\|\>" is called "pipe", a way to pass the output of one function to the next function. See [Ch18-Pipes](https://r4ds.had.co.nz/pipes.html) in R for Data Science.
 
+
+
+
+
+
 ## `birdnetR::predict()` arguments
-
-::::: columns
-::: {.column width="30%"}
-```{r}
-#| eval: false
-
-??birdnetR::predict
-```
-:::
-
-::: {.column width="70%"}
-![](images/clipboard-2983132844.png)
-:::
-:::::
-
-
-## `birdnetR::predict()` arguments (con'd)
 
 ::: panel-tabset
 ## Default
@@ -330,7 +338,7 @@ predictions <- predict(model, audio_path)
 
 ```{r}
 #| echo: false
-#| messages: false
+#| message: false
 df <- readRDS("birdnet_results_single_analysis.rds")
 
 df |> 
@@ -357,7 +365,7 @@ predictions <- predict(model, audio_path, min_confidence = 0.3)
 
 ```{r}
 #| echo: false
-#| messages: false
+#| message: false
 
 if (file.exists("birdnet_results_single_analysis_conf.rds")) {
   df <- readRDS("birdnet_results_single_analysis_conf.rds")
@@ -396,7 +404,7 @@ predictions <- predict(model, audio_path, latitude = 55.30, longitude = 20.99)
 
 ```{r}
 #| echo: false
-#| messages: false
+#| message: false
 
 if (file.exists("birdnet_results_single_analysis_lat_lon.rds")) {
   df <- readRDS("birdnet_results_single_analysis_lat_lon.rds")
@@ -433,7 +441,7 @@ predictions <- predict(model, audio_path, week = 22)
 
 ```{r}
 #| echo: false
-#| messages: false
+#| message: false
 
 if (file.exists("birdnet_results_single_analysis_week.rds")) {
   df <- readRDS("birdnet_results_single_analysis_week.rds")
@@ -471,7 +479,7 @@ predictions <- predict(model, audio_path, species_list = "Phalacrocorax carbo_Gr
 
 ```{r}
 #| echo: false
-#| messages: false
+#| message: false
 
 if (file.exists("birdnet_results_single_analysis_species.rds")) {
   df <- readRDS("birdnet_results_single_analysis_species.rds")
@@ -502,18 +510,116 @@ datatable(
 :::
 
 
+## `birdnetR::predict()` arguments
 
-## Batch analysis
+::::: columns
+::: {.column width="30%"}
+```{r}
+#| eval: false
 
-## Your turn - 1
+??birdnetR::predict
+```
+:::
 
--   using Merida lat, lon, and year long species list
+::: {.column width="70%"}
+![](images/clipboard-2983132844.png)
+:::
+:::::
 
--   confidence value 0.1
 
--   Which bird is the dominant species among all the example recordings?
 
--   Harder question - How many detections are there in total?
+## Your turn ⏱ 10 minutes
+
+There is an audio in *slides* > *practice_single_analysis* > *example_audio_single_analysis.mp3*. 
+
+- Which bird is the **dominant species** in this example recordings?
+- **Challenge:** set the location to Mérida. Does it change the result?
+
+
+### Hint
+
+```{r}
+#| eval: false
+library(birdnetR)
+library(here)
+
+model <- ___()
+
+audio <- here("slides", "practice_single_analysis", "example_audio_single_analysis.mp3")
+
+predictions <- predict(model, ___,
+                       latitude = ___,  # Mérida: about 20.97
+                       longitude = ___) # Mérida: about -89.61 (west is negative!)
+
+predictions |> ___()
+```
+
+
+
+## Your turn - solution
+
+Northern Bobwhite (*Colinus_nigrogularis*)!
+
+```{r}
+#| echo: false
+#| message: false
+
+if (file.exists(here("slides", "practice_single_analysis", "solution.rds"))) {
+  df <- readRDS(here("slides", "practice_single_analysis", "solution.rds"))
+} else {
+  model <- load_birdnet()
+
+  audio <- here("slides", 
+                "practice_single_analysis", 
+                "example_audio_single_analysis.mp3")
+
+  df <- predict(model, audio,
+                       latitude = 20.97, 
+                       longitude = -89.61) |>
+    as.data.frame()
+  saveRDS(df, here("slides", "practice_single_analysis", "solution.rds"))
+}
+
+df |> 
+select(-input) |>
+datatable(
+  options = list(
+    scrollX = TRUE,
+    scrollY = "150px",
+    paging = FALSE,
+    dom = "ft"
+  ),
+  class = "compact",
+  rownames = FALSE
+)
+
+```
+
+
+### Solution
+
+```{r}
+#| eval: false
+library(birdnetR)
+library(here)
+
+model <- load_birdnet()
+
+audio <- here("slides", "practice_single_analysis", "example_audio_single_analysis.mp3")
+
+predictions <- predict(model, audio,
+                       latitude = 20.97, 
+                       longitude = -89.61)
+
+predictions |> as.data.frame()
+```
+
+
+
+
+
+
+
 
 ## A complete stack for research
 
@@ -526,10 +632,16 @@ BirdNET is not only a model, but a toolkit can be accessed by...
 5.  GUI
 6.  Python package
 
+
+## Batch analysis
+
 ## Import BirdNET output into R
 
 -   If birdnetR, then the output is in R already.
 -   If other tools (e.g., GUI, Raven Pro), then need to import the output into R.
+
+
+
 
 ## Your turn - 2
 
@@ -576,6 +688,7 @@ Merida area, songs, high quality recordings (109 recordings from 47 species):
 
 ```{r}
 #| cache: true
+#| 
 Merida_birds <- query_xenocanto(species = 'lat: "20.97" lon: "-89.61" type: "song" q:">C"')
 ```
 
@@ -713,8 +826,7 @@ predictions <- predict(model,
 
 ```{r}
 #| echo: false
-#| messages: false
-
+#| message: false
 if (file.exists("birdnet_results.rds")) {
   df <- readRDS("birdnet_results.rds")
 } else {
@@ -830,7 +942,7 @@ detections.length === 0
   header: {start: "Start (s)", end: "End (s)", common_name: "Common name",
            scientific: "Scientific name", confidence: "Confidence"},
   format: {confidence: x => x.toFixed(2)},
-  height: 450})
+  height: 350})
   
 md`**Xeno-Canto label (the answer):** 
 
