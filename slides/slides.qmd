@@ -33,18 +33,13 @@ library(here)
 library(DT)
 ```
 
+## House keeping
 
+-   WIFI: xyz (pwd: 12345678)
 
-## House keeping 
+-   Workshop Github:
 
-- WIFI: xyz (pwd: 12345678)
-
-- Workshop Github: 
-
-- Data? Follow along? Breaks? Practice (blue and red tags)
-
-
-
+-   Data? Follow along? Breaks? Practice (blue and red tags)
 
 ## About me
 
@@ -94,52 +89,161 @@ library(DT)
 Artwork by [\@allison_horst](https://allisonhorst.com/), CC BY 4.0
 :::
 
-
 ## Outline
 
-1. Analyze audios with BirdNET in R (`birdnetR`, `birdnetTools`)
-2. Validate BirdNET detections in R (`birdnetTools`)
-3. Play a game with BirdNET, in R!
+1.  Analyzing audios with BirdNET in R (`birdnetR`, `birdnetTools`)
+2.  Validating BirdNET detections in R (`birdnetTools`)
+3.  Playing a game with BirdNET, in R!
 
 . . .
 
 > This workshop is meant to be a interactive session. So feel free to ask questions or share your experiences.
 
+# Analyze audios with BirdNET in R
+
+## Bioacoustics workflow
+
+![](images/clipboard-162260292.png)
+
+::: aside
+Figure adapted from [Kitzes et al., 2026](https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210x.70133), Methods in Ecology and Evolution
+:::
+
+## Global model - BirdNET
+
+[BirdNET.cornell.edu](https://birdnet.cornell.edu/)
+
+![](images/clipboard-3503245245.png)
+
+## What is BirdNET?
+
+The AI toolkit for conservation bioacoustics
+
+-   Developed by Cornell Lab of Ornithology **AND** Chemnitz University of Technology
+
+-   Main developer: Stefan Kahl, in 2016
+
+-   First publication in 2021
+
+-   CNN designed to classify sounds
+
+-   Trained on [Macaulay library](https://www.macaulaylibrary.org/) and [Xeno-Canto](https://xeno-canto.org/)
+
+-   Identify 6,522 classes worldwide (model v2.4)
+
+-   Open source on Github [BirdNET-Team](https://github.com/birdnet-team)
+
+## How does BirdNET work?
+
+A four steps architecture
+
+1.  Capture
+2.  Spectrogram
+    -   It splits audio into 3-secs segments
+
+    -   Segments are converted into spectrograms (images)
+3.  Neural Net
+    -   Spectrograms are passed to CNN for image classification
+
+    -   Detection of image patterns
+4.  Result
+    -   The output is a table, with **detected species** and **detection confidence**
+
+    -   Output can be filtered by geofencing (distribution model by eBird)
+
+## How does BirdNET work?
+
+![](images/clipboard-985236358.png)
+
+## A quick view of input / output
+
+## Running BirdNET in R
+
+The main package to run BirdNET in R is `birdnetR`
+
+```{r}
+library(birdnetR)
+```
+
+The first time using this package, use `load_birdnet()` to load models:
+
+```{r}
+#| eval: false
+model <- load_birdnet()
+```
+
+Then we could make predictions with `predict()` function:
+```{r}
+audio_path <- here("slides", "birdnet_example", "example.wav")
+```
+
+## Parameters
+
+- species list (lat, lon, species)
+- confidence value
+- sensitivity, etc
 
 
-# Analyze audios with BirdNET in R 
+## Batch analysis
+
+
+## Your turn - 1
+
+- using Merida lat, lon, and year long species list
+- confidence value 0.1
+
+- Which bird is the dominant species among all the example recordings?
+- Harder question - How many detections are there in total? 
+
+
+## A complete stack for research 
+
+BirdNET is not only a model, but a toolkit can be accessed by...
+
+1.  **R packages**
+2.  Online platform
+3.  Raven Pro
+4.  Phone apps
+5.  GUI
+6.  Python package
+
+
+## Import BirdNET output into R
+- If birdnetR, then the output is in R already. 
+- If other tools (e.g., GUI, Raven Pro), then need to import the output into R. 
+
+
+## Your turn - 2
+
 
 # Validate BirdNET detections in R
 
 
+## Your turn - 3
 
 
 # Play a game with BirdNET, in R!
 
-
-## Beat the BirdNET 🐦
+## Beat the BirdNET :bird:
 
 A bird guessing game, designed with BirdNET
 
-- We are all here to enjoy the birds
-- We already learned how to use BirdNET
-- Now let's use BirdNET to learn some birds of Mérida!
+### How to play
 
+1.  **Player A** picks a random recording
+2.  **The Group** listens and guesses the species
+3.  **BirdNET** reveals its guess
+4.  We see who is right! :heart:
 
+### How I made the game
 
-## How I made the game
-
-**Step 1.** Explore Mérida birds on Xeno-Canto → `suwo`
+**Step 1.** Explore / download Mérida birds on Xeno-Canto → `suwo`
 
 **Step 2.** Read and check the audio in R → `tuneR`, `seewave`
 
 **Step 3.** Identify species with BirdNET → `birdnetR`
 
-
-
-
-
-## Step 1: Explore bird sounds on Xeno-Canto
+## Step 1: Explore bird sounds
 
 [Xeno-Canto](https://xeno-canto.org): \~1 million wildlife recordings, shared under CC licenses
 
@@ -153,15 +257,12 @@ Use the `query_xenocanto()` function from the `suwo` package:
 library(suwo)
 ```
 
-
 Merida area, songs, high quality recordings (109 recordings from 47 species):
 
 ```{r}
 #| cache: true
 Merida_birds <- query_xenocanto(species = 'lat: "20.97" lon: "-89.61" type: "song" q:">C"')
 ```
-
-
 
 ```{r}
 #| echo: false
@@ -181,151 +282,11 @@ datatable(
 )
 ```
 
+## Download and read into R
 
+Use the `download_media()` function from the `suwo` package:
 
-
-
-
-# Others
-
-. . .
-
-Use the `query_xenocanto()` function from the `suwo` package:
-
-```{r}
-library(suwo)
-```
-
-. . .
-
-Enter the scientific name of the bird species:
-
-```{r}
-#| cache: true
-query <- suwo::query_xenocanto(species = "Haliaeetus leucocephalus")
-```
-
-
-. . .
-
-```{r}
-#| echo: false
-datatable(query,
-  options = list(
-    scrollX = TRUE,      # horizontal scroll (many columns)
-    scrollY = "400px",   # vertical scroll within this height
-    paging = FALSE,      # show all rows in the scroll box
-    dom = "ft"           # just the filter box + table
-  ),
-  class = "compact",
-  rownames = FALSE
-)
-```
-
-
-## Additional search tags {.smaller}
-
-Search tags you can combine:
-
-| Tag | Example | Meaning |
-|------------------|-------------------------|-----------------------------|
-| `en:` | `en:"Barred Owl"` | English name |
-| `q:` | `q:A` | Recording quality (A = best) |
-| `len:` | `len:10-40` | Length in seconds |
-| `cnt:` | `cnt:canada` | Country |
-| `lat:`, `lon:` | `lat: 49.26`, `lon: -123.11` | Latitude and longitude (1 degree) |
-| `type:` | `type:song` | Song, call, drumming... |
-
-## Black-capped Chickadee in ...
-
-::: panel-tabset
-### Country
-
-```{r}
-#| cache: true
-bcch_canada <- query_xenocanto(species = 'sp: "Poecile atricapillus" cnt:"canada"')
-
-```
-
-```{r}
-#| echo: false
-
-print(paste0("Number of recordings found: ", nrow(bcch_canada)))
-
-datatable(bcch_canada,
-  options = list(
-    scrollX = TRUE,      # horizontal scroll (many columns)
-    scrollY = "400px",   # vertical scroll within this height
-    paging = FALSE,      # show all rows in the scroll box
-    dom = "ft"           # just the filter box + table
-  ),
-  class = "compact",
-  rownames = FALSE
-)
-
-```
-
-### City
-
-```{r}
-#| cache: true
-bcch_vancouver <- query_xenocanto(species = 'sp: "Poecile atricapillus" lat: "49.26" lon: "-123.11"')
-```
-
-```{r}
-#| echo: false
-
-print(paste0("Number of recordings found: ", nrow(bcch_vancouver)))
-
-datatable(bcch_vancouver,
-  options = list(
-    scrollX = TRUE,      # horizontal scroll (many columns)
-    scrollY = "400px",   # vertical scroll within this height
-    paging = FALSE,      # show all rows in the scroll box
-    dom = "ft"           # just the filter box + table
-  ),
-  class = "compact",
-  rownames = FALSE
-)
-
-```
-
-### Recordist
-
-```{r}
-#| cache: true
-bcch_sunny <- query_xenocanto(species = 'sp: "Poecile atricapillus" lat: "49.26" lon: "-123.11" rec: "Sunny"')
-```
-
-```{r}
-#| echo: false
-
-print(paste0("Number of recordings found: ", nrow(bcch_sunny)))
-
-
-datatable(bcch_sunny,
-  options = list(
-    scrollX = TRUE,      # horizontal scroll (many columns)
-    scrollY = "400px",   # vertical scroll within this height
-    paging = FALSE,      # show all rows in the scroll box
-    dom = "ft"           # just the filter box + table
-  ),
-  class = "compact",
-  rownames = FALSE
-)
-
-```
-:::
-
-## Download audios
-
-. . .
-
-Use the `download_media()` function from the `suwo` package.
-
--   It can be one single audio download:
-
-. . .
+Batch download:
 
 ```{r}
 #| echo: false
@@ -336,32 +297,17 @@ dir.create(audio_dir, showWarnings = FALSE)
 ```{r}
 #| cache: true
 #| message: true
-download_media(metadata = bcch_sunny[1,],
-               path = audio_dir)
-```
-
--   Or a batch download:
-
-. . .
-
-```{r}
-#| cache: true
-#| message: true
-download_media(metadata = bcch_sunny,
+download_media(metadata = Merida_birds |> head(6),
                path = audio_dir)
 ```
 
 ## Step 2: Read and check audio in R
 
-. . .
-
-Use the `readWave()` or `readMP3()` function from the `tuneR` package.
+Use the `readWave()` or `readMP3()` function from the `tuneR` package:
 
 ```{r}
 library(tuneR)
 ```
-
-. . .
 
 Let's read one audio in the `audio_dir` folder:
 
@@ -369,13 +315,11 @@ Let's read one audio in the `audio_dir` folder:
 audio_path <- tibble(path = list.files(audio_dir, pattern = "\\.(mp3|wav)$",
                                  full.names = TRUE, ignore.case = TRUE)) |>
   mutate(modified = file.mtime(path)) |>
-  slice_max(modified, n = 1) |> 
+  slice_min(modified, n = 1) |> 
   pull(path)
 
 audio_path
 ```
-
-. . .
 
 Check the file extension and read it accordingly:
 
@@ -391,15 +335,11 @@ if (ext == "mp3") {
 
 ## Listen
 
-. . .
-
 To listen, use the `play()` function from the `tuneR` package:
 
 ```{r}
 library(tuneR)
 ```
-
-. . .
 
 Indicate the audio object:
 
@@ -411,21 +351,17 @@ audio |>
 
 ```{r}
 #| echo: false
-htmltools::tags$audio(src = "audio/Poecile_atricapillus-XC531549.mp3",
-                      controls = NA)
+htmltools::tags$audio(src = file.path("audio", basename(audio_path)),
+           controls = "controls")
 ```
 
 ## Look
-
-. . .
 
 To visualize, use the `spectro()` function from the `seewave` package:
 
 ```{r}
 library(seewave)
 ```
-
-. . .
 
 Indicate the audio abject:
 
@@ -441,17 +377,13 @@ audio |>
 -   **x-axis**: time, **y-axis**: pitch, **darkness**: loudness
 -   Every species has a "shape" you can learn to read
 
-## Step 3: Identify species with BirdNET
-
-. . .
+## Step 3: What does the BirdNET say?
 
 Use the `predict()` function from the `birdnetR` package.
 
 ```{r}
 library(birdnetR)
 ```
-
-. . .
 
 Load model and run prediction:
 
@@ -463,8 +395,6 @@ predictions <- predict(model,
                        files = audio_path,
                        min_confidence = 0.3)
 ```
-
-. . .
 
 ```{r}
 #| echo: false
@@ -496,45 +426,23 @@ datatable(
 
 ## Put everything together
 
-. . .
+### How to play
 
-Step 1. Explore bird songs around the world (`suwo`)
+1.  **Player A** picks a random recording
+2.  **The Group** listens and guesses the species
+3.  **BirdNET** reveals its guess
+4.  We see who is right! :heart:
 
-. . .
+> Ready to "Beat the BirdNET"? :video_game:
 
-Step 2. Read and check audio in R (`tuneR`, `seewave`)
+## Final peek for our answer sheet
 
-. . .
-
-Step 3. Identify species with BirdNET (`birdnetR`, `birdnetTools`)
-
-. . .
-
-> Let's play **Name that bird!** :bird:
-
-## Guess the birds in Vancouver!
-
-Vancouver-area, songs, high quality recordings:
-
-```{r}
-#| cache: true
-vancouver_birds <- query_xenocanto(species = 'lat: "49.26" lon: "-123.11" type: "song" q:"A"')
-```
-
-. . .
-
-Sebset - here is the "answer sheet" (66 species, 112 recordings):
+A total of 109 recordings from 47 species
 
 ```{r}
 #| echo: false
 
-set.seed(123)
-vancouver_birds_selected <- vancouver_birds |>
-  group_by(species) |>
-  slice_sample(n = 2) |>
-  ungroup()
-
-vancouver_birds_selected |>
+Merida_birds |>
 mutate(number = row_number()) |>
 select(number, key, species, date, time, user_name, locality, file_extension) |>
 datatable(
@@ -548,19 +456,6 @@ datatable(
   rownames = FALSE
 )
 ```
-
-## How to play
-
-1.  **Player A** picks a random recording
-2.  **Player B** listens and guesses the species
-
-::: fragment
-**BirdNET** reveals the answer! :heart:
-:::
-
-. . .
-
-> Ready?
 
 ```{r}
 #| echo: false
@@ -579,7 +474,7 @@ birdnet <- list.files(here("slides", "audio_game_output"),
          confidence  = Confidence) |>
   arrange(base, start)
 
-game <- vancouver_birds_selected |>
+game <- Merida_birds |>
   mutate(base  = paste0(str_replace_all(species, " ", "_"), "-XC", key),
          audio = file.path("audio_game", paste0(base, ".", file_extension)),
          spec  = file.path("audio_game_spectrogram", paste0(base, ".png"))) |>
@@ -611,11 +506,7 @@ detections = transpose(birdnet).filter(d => d.base === bird.base)
 
 ```{ojs}
 //| echo: false
-md`**Xeno-Canto label:** 
-
-*${bird.species}*, recorded by ${bird.user_name} (XC${bird.key})
-
-**BirdNET detection:**`
+md`**BirdNET says:**`
 
 detections.length === 0
   ? md`No detection`
@@ -625,7 +516,14 @@ detections.length === 0
            scientific: "Scientific name", confidence: "Confidence"},
   format: {confidence: x => x.toFixed(2)},
   height: 450})
+  
+md`**Xeno-Canto label (the answer):** 
+
+*${bird.species}*, recorded by ${bird.user_name} (XC${bird.key})`
+
 ```
+
+## Hope you had fun!
 
 ## From 5 clips to 50,000 hours
 
@@ -649,3 +547,9 @@ Thanks for the "East and Southeast Asia Travel Fund for Ornithology, from IOU"
 ::: aside
 Presentation by Sunny Tseng <https://sunnytseng.ca/>, CC BY 4.0
 :::
+
+## Discussion 
+
+-   Which AI tool I should use? Local versus global?
+
+-   
