@@ -130,7 +130,13 @@ Artwork by [\@allison_horst](https://allisonhorst.com/), CC BY 4.0
 
 -   For practice:
 
-slides/practice_single_analysis slides/practice_batch_analysis slides/practice_validation
+slides/practice_single_analysis slides/practice_batch_analysis slides/
+
+
+- This is for bonus 🌶️
+- This is for your practice🦉
+- This is the answer for the practice 
+
 
 # Analyze audio with BirdNET in R
 
@@ -531,7 +537,9 @@ datatable(
 :::
 :::::
 
-## Your turn ⏱ 10 minutes
+## Your turn 🦉
+
+⏱ 10 minutes
 
 There is an audio file in *slides* \> *practice_single_analysis* \> *example_audio_single_analysis.mp3*.
 
@@ -723,7 +731,6 @@ predictions <- birdnet_combine(output_path)
 
 ```{r}
 #| echo: false
-#| message: true
 predictions |> 
 datatable(
   options = list(
@@ -739,6 +746,35 @@ datatable(
 
 ## Data exploration
 
+Let's use an example dataset provided in `birdnetTools`:
+
+```{r}
+predictions <- example_jprf_2023
+```
+
+- John Prince Research Forest, British Columbia, Canada
+- 5 ARU sites
+- During May–June 2023
+- 24 hours using a duty cycle of 1-min on, 4-min off
+
+```{r}
+#| echo: false
+predictions |> 
+datatable(
+  options = list(
+    scrollX = TRUE,
+    scrollY = "400px",
+    paging = FALSE,
+    dom = "ft"
+  ),
+  class = "compact",
+  rownames = FALSE
+)
+```
+
+
+## Data exploration (con'd)
+
 Sometimes we need more than just the detection. For example...
 
 1. Date and time
@@ -749,7 +785,7 @@ predictions_datetime <- birdnet_add_datetime(predictions)
 
 - This function automatically detects the date / time format from the file name
 
-- And mutates 8 date / time columns
+- And mutates eight date / time columns:
 
 ```{r}
 #| echo: false
@@ -768,14 +804,42 @@ datatable(
 
 
 
-## Data exploration (con'd)
+## Data exploration (con'd) 🌶
 
-- If the datetime format is special, you can specify the format
+- Default setting of `birdnet_add_datetime()` covers most of the formats:
 
 ```{r}
 formals(birdnet_add_datetime)$formats
 ```
 
+- But, if the datetime format is special, it could fail:
+```{r}
+#| message: true
+#| cache: true
+predictions_fail <- example_jprf_2023[1:5,] |> 
+  dplyr::mutate(filepath =c(
+    "E:\\Audio\\2023_passerine\\14_18\\00014530_20230518T1335.WAV",
+    "E:\\Audio\\2023_passerine\\14_18\\051820231335.WAV",
+    "E:\\Audio\\2023_passerine\\14_18\\18052023133500.WAV",
+    "E:\\Audio\\2023_passerine\\14_18\\2023-05-18-13-35-00.WAV",
+    "E:\\Audio\\2023_passerine\\14_18\\202305181335.WAV"))
+
+predictions_fail |> birdnet_add_datetime()
+```
+
+- You could then set your own format with the `formats` argument:
+```{r}
+#| message: true
+#| cache: true
+predictions_fail |> birdnet_add_datetime(formats = c("%Y%m%dT%H%M", # <- user-defined format
+                                                     "%m%d%Y%H%M",
+                                                     "%d%m%Y%H%M%S",
+                                                     "%Y-%m-%d-%H-%M-%S",
+                                                     "%Y%m%d%H%M"))
+```
+
+
+> See detailed documentation at `?birdnet_add_datetime()`
 
 
 
