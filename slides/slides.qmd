@@ -46,7 +46,6 @@ show_table <- function(df, height = "200px") {
 }
 ```
 
-
 ## House keeping
 
 -   WIFI: xyz (pwd: 12345678)
@@ -116,12 +115,22 @@ Artwork by [\@allison_horst](https://allisonhorst.com/), CC BY 4.0
 ## Workshop rules
 
 -   Your turn section
--   Stickers for practice time
--   Clone the repo for the code, slides, and dataset
-- Open the R project
--   Data? Follow along? Breaks? Practice (blue and red tags)
-- Copy code chunk instead of typing
 
+-   Stickers for practice time
+
+-   Clone the repo for the code, slides, and dataset
+
+-   Open the R project
+
+-   Data? Follow along? Breaks? Practice (blue and red tags)
+
+-   Copy code chunk instead of typing
+
+-   For demo: slides/birdnet_analysis_example
+
+-   For practice:
+
+slides/practice_single_analysis slides/practice_batch_analysis slides/practice_validation
 
 # Analyze audio with BirdNET in R
 
@@ -157,11 +166,9 @@ The AI toolkit for conservation bioacoustics
 
 -   Open source on Github [BirdNET-Team](https://github.com/birdnet-team)
 
-
 ## How does BirdNET work?
 
 ![](images/clipboard-985236358.png)
-
 
 ## How does BirdNET work? (con'd)
 
@@ -180,10 +187,6 @@ A four-step architecture
     -   The output is a table, with **detected species** and **detection confidence**
 
     -   Geofencing output (species occurrence model based on eBird data)
-
-
-
-
 
 ## An example is worth a thousand words
 
@@ -251,37 +254,42 @@ datatable(
 
 ## Running BirdNET in R
 
-The main package to run BirdNET in R is `birdnetR`. Load it with:
+1.  The main package to run BirdNET in R is `birdnetR`. Load it with:
 
 ```{r}
 library(birdnetR)
 ```
 
-Load the BirdNET model **once per R session** with `load_birdnet()`. The model files are downloaded in PC for first-time using (slow).
+2.  Load the BirdNET model **once per R session** with `load_birdnet()`. The model files are downloaded in PC for first-time using (slow).
 
 ```{r}
 #| eval: false
 model <- load_birdnet()
 ```
 
-A path to an audio file needs to be identified:
+3.  Identify the path to the audio file:
 
 ```{r}
-audio_path <- here(
-  "slides", 
-  "birdnet_analysis_example", 
-  "20250609_000000.wav"
-  )
+audio_path <- here("slides", 
+                   "birdnet_analysis_example", 
+                   "20250609_000000.wav")
 ```
 
-Then we could make predictions with `predict()` function:
+```{r}
+#| echo: false
+
+audio_path
+```
+
+
+4.  Then we could make predictions with `predict()` function:
 
 ```{r}
 #| eval: false
 predictions <- predict(model, audio_path)
 ```
 
-## Running BirdNET in R - output
+## Running BirdNET in R (con'd)
 
 The output is a list object in R, which can be viewed as a data frame:
 
@@ -312,28 +320,25 @@ datatable(
 
 ```
 
-> "\|\>" is called "pipe", a way to pass the output of one function to the next function. See [Ch18-Pipes](https://r4ds.had.co.nz/pipes.html) in R for Data Science.
-
-
-
-
-
+> "`|>`" is called "pipe", a way to pass the output of one function to the next function. See [Ch18-Pipes](https://r4ds.had.co.nz/pipes.html) in R for Data Science.
 
 ## `birdnetR::predict()` arguments
 
 ::: panel-tabset
 ## Default
+
 ```{r}
 #| eval: false
-model <- load_birdnet()
+library(birdnetR)                               # step 1
 
-audio_path <- here(
-  "slides", 
-  "birdnet_analysis_example", 
-  "20250609_000000.wav"
-  )
+model <- load_birdnet()                         # step 2 
 
-predictions <- predict(model, audio_path)
+audio_path <- here("slides",                    # step 3
+                   "birdnet_analysis_example", 
+                   "20250609_000000.wav") 
+
+predictions <- predict(model, audio_path) |>    # step 4
+  as.data.frame()
 ```
 
 ```{r}
@@ -346,7 +351,7 @@ select(-input) |>
 datatable(
   options = list(
     scrollX = TRUE,
-    scrollY = "300px",
+    scrollY = "250px",
     paging = FALSE,
     dom = "ft"
   ),
@@ -355,13 +360,13 @@ datatable(
 )
 ```
 
-
 ## Confidence
+
 ```{r}
 #| eval: false
-predictions <- predict(model, audio_path, min_confidence = 0.3)
+predictions <- predict(model, audio_path, min_confidence = 0.3) |>
+  as.data.frame()
 ```
-
 
 ```{r}
 #| echo: false
@@ -391,15 +396,15 @@ datatable(
 
 ```
 
-- Default value of min_confidence is 0.1
-- This is a universal minimum confidence, not species-specific
-
+-   Default value of min_confidence is 0.1
+-   This is a universal minimum confidence, not species-specific
 
 ## Lat / Lon
 
 ```{r}
 #| eval: false
-predictions <- predict(model, audio_path, latitude = 55.30, longitude = 20.99)
+predictions <- predict(model, audio_path, latitude = 55.30, longitude = 20.99) |>
+  as.data.frame()
 ```
 
 ```{r}
@@ -430,13 +435,14 @@ datatable(
 
 ```
 
-- Species list calculated by distribution model (eBird) for the given lat/lon
+-   Species list calculated by distribution model (eBird) for the given lat/lon
 
 ## Week
 
 ```{r}
 #| eval: false
-predictions <- predict(model, audio_path, week = 22)
+predictions <- predict(model, audio_path, week = 22) |>
+  as.data.frame()
 ```
 
 ```{r}
@@ -467,14 +473,15 @@ datatable(
 
 ```
 
-- Week is defined by "four weeks per month" (1 ~ 48)
-- For example, Mid June is week 22
+-   Week is defined by "four weeks per month" (1 \~ 48)
+-   For example, Mid June is week 22
 
 ## Species
 
 ```{r}
 #| eval: false
-predictions <- predict(model, audio_path, species_list = "Phalacrocorax carbo_Great Cormorant")
+predictions <- predict(model, audio_path, species_list = "Phalacrocorax carbo_Great Cormorant") |>
+  as.data.frame()
 ```
 
 ```{r}
@@ -505,12 +512,10 @@ datatable(
 
 ```
 
-- Useful when your target species is a single or only a few speicies
-
+-   Useful when your target species is a single or only a few speicies
 :::
 
-
-## `birdnetR::predict()` arguments
+## `birdnetR::predict()` arguments (con'd)
 
 ::::: columns
 ::: {.column width="30%"}
@@ -526,15 +531,12 @@ datatable(
 :::
 :::::
 
-
-
 ## Your turn ⏱ 10 minutes
 
-There is an audio in *slides* > *practice_single_analysis* > *example_audio_single_analysis.mp3*. 
+There is an audio file in *slides* \> *practice_single_analysis* \> *example_audio_single_analysis.mp3*.
 
-- Which bird is the **dominant species** in this example recordings?
-- **Challenge:** set the location to Mérida. Does it change the result?
-
+-   Which bird is the **dominant species** in this example recordings?
+-   **Challenge:** set the location to Mérida. Does it change the result?
 
 ### Hint
 
@@ -545,7 +547,7 @@ library(here)
 
 model <- ___()
 
-audio <- here("slides", "practice_single_analysis", "example_audio_single_analysis.mp3")
+audio_path <- here("slides", "practice_single_analysis", "example_audio_single_analysis.mp3")
 
 predictions <- predict(model, ___,
                        latitude = ___,  # Mérida: about 20.97
@@ -554,9 +556,7 @@ predictions <- predict(model, ___,
 predictions |> ___()
 ```
 
-
-
-## Your turn - solution
+## Your turn :key:
 
 Northern Bobwhite (*Colinus_nigrogularis*)!
 
@@ -569,11 +569,11 @@ if (file.exists(here("slides", "practice_single_analysis", "solution.rds"))) {
 } else {
   model <- load_birdnet()
 
-  audio <- here("slides", 
+  audio_path <- here("slides", 
                 "practice_single_analysis", 
                 "example_audio_single_analysis.mp3")
 
-  df <- predict(model, audio,
+  df <- predict(model, audio_path,
                        latitude = 20.97, 
                        longitude = -89.61) |>
     as.data.frame()
@@ -595,7 +595,6 @@ datatable(
 
 ```
 
-
 ### Solution
 
 ```{r}
@@ -605,47 +604,190 @@ library(here)
 
 model <- load_birdnet()
 
-audio <- here("slides", "practice_single_analysis", "example_audio_single_analysis.mp3")
+audio_path <- here("slides", "practice_single_analysis", "example_audio_single_analysis.mp3")
 
-predictions <- predict(model, audio,
+predictions <- predict(model, audio_path,
                        latitude = 20.97, 
                        longitude = -89.61)
 
 predictions |> as.data.frame()
 ```
 
+## Often, we need batch analysis
+
+Research projects usually consists of more than single audio
+
+- Recordings from hundreds of recorders, with months of data
+
+- Batch analysis can be done by...
+
+  1.  Raven Pro
+  2.  GUI
+  3.  Python package `birdnet`
+  4.  R package `birdnetR`
+
+## Batch analysis in R
+
+In step 3 - we need to identify multiple audio paths:
+
+```{r}
+audio_paths <- here("slides", "birdnet_analysis_example") |>
+  list.files(pattern = "\\.(mp3|wav)$", full.names = TRUE, ignore.case = TRUE)
+
+audio_paths
+```
+
+## Batch analysis in R (con'd)
+
+In step 4 - pass to `predict`:
+
+```{r}
+#| eval: false
+predictions <- predict(model, audio_paths) |>
+  as.data.frame()
+
+```
+
+```{r}
+#| echo: false
+#| message: false
+
+if (file.exists("birdnet_results_batch_analysis.rds")) {
+  df <- readRDS("birdnet_results_batch_analysis.rds")
+} else {
+  model <- load_birdnet()
+  df <- predict(model, audio_paths) |>
+    as.data.frame()
+  saveRDS(df, "birdnet_results_batch_analysis.rds")
+}
+
+df |> 
+datatable(
+  options = list(
+    scrollX = TRUE,
+    scrollY = "400px",
+    paging = FALSE,
+    dom = "ft"
+  ),
+  class = "compact",
+  rownames = FALSE
+)
+
+```
+
+Easy! :heart:
+
+## Batch analysis from other tools
+
+::::: columns
+::: {.column width="70%"}
+-   birdnetR: output is already in R
+
+-   Other tools (e.g., BirdNET GUI): results are saved as files in output folder, with a structure like this:
+
+-   **How to post-process BirdNET results in R?**
+
+-   Importing, exploring, validation, visualization, etc?
+
+-   **`birdnetTools`**
+:::
+
+::: {.column width="30%"}
+![](images/clipboard-866967270.png)
+:::
+:::::
+
+## Working with BirdNET output
+
+![](images/clipboard-2366157155.png)
+
+function syntax: birdnet_*()
+
+## Data import
+
+1. Load the `birdnetTools` package:
+```{r}
+library(birdnetTools)
+```
+
+2. Identify the path to the BirdNET output folder:
+```{r}
+output_path <- here("slides", "birdnet_analysis_example_output")
+```
+
+3. Import the BirdNET output with `birdnet_combine()`:
+```{r}
+#| message: true
+predictions <- birdnet_combine(output_path)
+```
+
+```{r}
+#| echo: false
+#| message: true
+predictions |> 
+datatable(
+  options = list(
+    scrollX = TRUE,
+    scrollY = "125px",
+    paging = FALSE,
+    dom = "ft"
+  ),
+  class = "compact",
+  rownames = FALSE
+)
+```
+
+## Data exploration
+
+Sometimes we need more than just the detection. For example...
+
+1. Date and time
+```{r}
+#| message: true
+predictions_datetime <- birdnet_add_datetime(predictions)
+```
+
+- This function automatically detects the date / time format from the file name
+
+- And mutates 8 date / time columns
+
+```{r}
+#| echo: false
+predictions_datetime |> 
+datatable(
+  options = list(
+    scrollX = TRUE,
+    scrollY = "200px",
+    paging = FALSE,
+    dom = "ft"
+  ),
+  class = "compact",
+  rownames = FALSE
+)
+```
+
+
+
+## Data exploration (con'd)
+
+- If the datetime format is special, you can specify the format
+
+```{r}
+formals(birdnet_add_datetime)$formats
+```
 
 
 
 
+2. Site of each detection
 
+3. Filter
 
-
-## A complete stack for research
-
-BirdNET is not only a model, but a toolkit can be accessed by...
-
-1.  **R packages**
-2.  Online platform
-3.  Raven Pro
-4.  Phone apps
-5.  GUI
-6.  Python package
-
-
-## Batch analysis
-
-## Import BirdNET output into R
-
--   If birdnetR, then the output is in R already.
--   If other tools (e.g., GUI, Raven Pro), then need to import the output into R.
-
-
-
+4. Headmap
 
 ## Your turn - 2
 
-# Validate BirdNET detections in R
+# Data validation
 
 ## Your turn - 3
 
