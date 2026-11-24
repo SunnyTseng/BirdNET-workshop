@@ -1,0 +1,9 @@
+Start (s),End (s),Scientific name,Common name,Confidence,File
+24.0,27.0,Ficedula parva,Red-breasted Flycatcher,0.2855,C:\Users\sunny\Dropbox\work_remotely\BirdNET-workshop\slides\birdnet_analysis_example\20250609_001200.WAV
+27.0,30.0,Ficedula parva,Red-breasted Flycatcher,0.3601,C:\Users\sunny\Dropbox\work_remotely\BirdNET-workshop\slides\birdnet_analysis_example\20250609_001200.WAV
+33.0,36.0,Hylocichla mustelina,Wood Thrush,0.3643,C:\Users\sunny\Dropbox\work_remotely\BirdNET-workshop\slides\birdnet_analysis_example\20250609_001200.WAV
+36.0,39.0,Phalacrocorax carbo,Great Cormorant,0.5992,C:\Users\sunny\Dropbox\work_remotely\BirdNET-workshop\slides\birdnet_analysis_example\20250609_001200.WAV
+42.0,45.0,Hylocichla mustelina,Wood Thrush,0.5746,C:\Users\sunny\Dropbox\work_remotely\BirdNET-workshop\slides\birdnet_analysis_example\20250609_001200.WAV
+42.0,45.0,Corvus brachyrhynchos,American Crow,0.2901,C:\Users\sunny\Dropbox\work_remotely\BirdNET-workshop\slides\birdnet_analysis_example\20250609_001200.WAV
+45.0,48.0,Hylocichla mustelina,Wood Thrush,0.5525,C:\Users\sunny\Dropbox\work_remotely\BirdNET-workshop\slides\birdnet_analysis_example\20250609_001200.WAV
+54.0,57.0,Hylocichla mustelina,Wood Thrush,0.3560,C:\Users\sunny\Dropbox\work_remotely\BirdNET-workshop\slides\birdnet_analysis_example\20250609_001200.WAV

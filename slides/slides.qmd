@@ -1,5 +1,5 @@
 ---
-title: "Getting Started with BirdNET in GUI and R"
+title: "Analyzing audio with BirdNET in R"
 subtitle: "The Last Birdbender"
 
 author: Sunny Tseng, PhD
@@ -538,7 +538,7 @@ datatable(
 
 ⏱ 10 minutes
 
-There is an audio file in *slides* \> *practice_single_analysis* \> *example_audio_single_analysis.mp3*.
+**Data:** `slides/practice_single_analysis/example_audio_single_analysis.mp3`
 
 -   Which bird is the **dominant species** in this example recordings?
 -   **Challenge:** set the location to Mérida. Does it change the result?
@@ -633,12 +633,15 @@ Research projects usually consists of more than single audio
 
 ## Batch analysis in R
 
-In step 3 - we need to identify multiple audio paths:
+In step 3 - identify multiple audio paths:
 
 ```{r}
 audio_paths <- here("slides", "birdnet_analysis_example") |>
   list.files(pattern = "\\.(mp3|wav)$", full.names = TRUE, ignore.case = TRUE)
+```
 
+```{r}
+#| echo: false
 audio_paths
 ```
 
@@ -712,28 +715,34 @@ Easy! :heart:
 
 ## Working with BirdNET output
 
+::::: columns
+::: {.column width="70%"}
 ![](images/clipboard-2147607732.png)
+:::
 
-function syntax: birdnet\_\*()
-
-
-
-
-## Data import
-
-1.  Load the `birdnetTools` package:
+::: {.column width="30%"}
+Load `birdnetTools`:
 
 ```{r}
 library(birdnetTools)
 ```
+:::
+:::::
 
-2.  Identify the path to the BirdNET output folder:
+## Data import
+
+1.  Identify the path to the BirdNET output folder:
 
 ```{r}
 output_path <- here("slides", "birdnet_analysis_example_output")
 ```
 
-3.  Import the BirdNET output with `birdnet_combine()`:
+```{r}
+#| echo: false
+output_path
+```
+
+2.  Import the BirdNET output with `birdnet_combine()`:
 
 ```{r}
 #| message: true
@@ -747,7 +756,7 @@ predictions |>
   datatable(
     options = list(
       scrollX = TRUE,
-      scrollY = "125px",
+      scrollY = "150px",
       paging = FALSE,
       dom = "ft"
     ),
@@ -808,7 +817,7 @@ predictions_fail |> birdnet_add_datetime()
 
 ## Data exploration (con'd) :hot_pepper:
 
--   You could then set your own format with the `formats` argument:
+-   Set customized format with the `formats` argument:
 
 ```{r}
 #| message: true
@@ -821,13 +830,12 @@ predictions_fail |> birdnet_add_datetime(formats = c("%Y%m%dT%H%M",  # <- user-d
 
 2.  Filter the detection with `birdnet_filter()`:
 
-
 ::: panel-tabset
 ## by species
 
 ```{r}
-predictions_filtered <- predictions |> 
-  birdnet_filter(species = c("Great Cormorant", "Wood Thrush"))
+predictions_filtered <- birdnet_filter(predictions,
+                                       species = c("Great Cormorant", "Wood Thrush"))
 ```
 
 ```{r}
@@ -838,7 +846,7 @@ df |>
 datatable(
   options = list(
     scrollX = TRUE,
-    scrollY = "300px",
+    scrollY = "200px",
     paging = FALSE,
     dom = "ft"
   ),
@@ -846,15 +854,13 @@ datatable(
   rownames = FALSE
 )
 ```
-
-
 
 ## by threshold
 
 ```{r}
-predictions_filtered <- predictions |> 
-  birdnet_filter(species = c("Great Cormorant", "Wood Thrush"),
-                 threshold = )
+predictions_filtered <- birdnet_filter(predictions,
+                                       species = c("Great Cormorant", "Wood Thrush"),
+                                       threshold = 0.4)
 ```
 
 ```{r}
@@ -865,7 +871,7 @@ df |>
 datatable(
   options = list(
     scrollX = TRUE,
-    scrollY = "300px",
+    scrollY = "200px",
     paging = FALSE,
     dom = "ft"
   ),
@@ -873,13 +879,14 @@ datatable(
   rownames = FALSE
 )
 ```
-
 
 ## by time
 
 ```{r}
-predictions_filtered <- predictions |> 
-  birdnet_filter(species = c("Great Cormorant", "Wood Thrush"))
+predictions_filtered <- birdnet_filter(predictions,
+                                       species = c("Great Cormorant", "Wood Thrush"),
+                                       threshold = 0.4,
+                                       year = 2025)
 ```
 
 ```{r}
@@ -890,7 +897,7 @@ df |>
 datatable(
   options = list(
     scrollX = TRUE,
-    scrollY = "300px",
+    scrollY = "200px",
     paging = FALSE,
     dom = "ft"
   ),
@@ -899,13 +906,72 @@ datatable(
 )
 ```
 
+## full options
+
+```{r}
+#| eval: false
+?birdnet_filter()
+```
+
+![](images/clipboard-709298320.png)
 :::
 
 
+## Your turn :owl:
+
+⏱ 10 minutes
+
+**Data:** `slides/practice_batch_analysis/`
+
+- Which date was the recordings collected from?
+- How many detections does Great Cormorant have, with confidence > 0.3? 
+- **Challenge**: 
+
+### Hint
+
+```{r}
+#| eval: false
+
+library(birdnetTools)
+library(here)
+
+predictions <- birdnet_combine(here("slides", "practice_batch_analysis"))
+
+birdnet_add_datetime(predictions)
+
+birdnet_filter(predictions,
+               species = "Great Cormorant",
+               threshold = 0.3)
+
+```
+
+
+## Your turn :key:
+
+- 2025 Jun. 9th! <- my birthday!
+- Four detections :) 
+
+### Solution
+
+```{r}
+#| eval: false
+
+library(birdnetTools)
+library(here)
+
+predictions <- birdnet_combine(here("slides", "practice_batch_analysis"))
+
+birdnet_add_datetime(predictions)
+
+birdnet_filter(predictions,
+               species = "Great Cormorant",
+               threshold = 0.3)
+
+```
 
 
 
-## Your turn - 2
+
 
 # Data validation
 
@@ -1213,6 +1279,8 @@ md`**Xeno-Canto label (the answer):**
 ```
 
 ## Hope you had fun!
+
+I had a lot of fun! :) 
 
 ## From 5 clips to 50,000 hours
 
