@@ -132,11 +132,9 @@ Artwork by [\@allison_horst](https://allisonhorst.com/), CC BY 4.0
 
 slides/practice_single_analysis slides/practice_batch_analysis slides/
 
-
-- This is for bonus 🌶️
-- This is for your practice🦉
-- This is the answer for the practice 
-
+-   This is for bonus slides :hot_pepper:
+-   This is for your practice:owl:
+-   This is the answer for the practice :key:
 
 # Analyze audio with BirdNET in R
 
@@ -286,7 +284,6 @@ audio_path <- here("slides",
 
 audio_path
 ```
-
 
 4.  Then we could make predictions with `predict()` function:
 
@@ -537,7 +534,7 @@ datatable(
 :::
 :::::
 
-## Your turn 🦉
+## Your turn :owl:
 
 ⏱ 10 minutes
 
@@ -625,14 +622,14 @@ predictions |> as.data.frame()
 
 Research projects usually consists of more than single audio
 
-- Recordings from hundreds of recorders, with months of data
+-   Recordings from hundreds of recorders, with months of data
 
-- Batch analysis can be done by...
+-   Batch analysis can be done by...
 
-  1.  Raven Pro
-  2.  GUI
-  3.  Python package `birdnet`
-  4.  R package `birdnetR`
+    1.  Raven Pro
+    2.  GUI
+    3.  Python package `birdnet`
+    4.  R package `birdnetR`
 
 ## Batch analysis in R
 
@@ -691,11 +688,19 @@ Easy! :heart:
 ::: {.column width="70%"}
 -   birdnetR: output is already in R
 
--   Other tools (e.g., BirdNET GUI): results are saved as files in output folder, with a structure like this:
+-   Other tools (e.g., BirdNET GUI)
+
+    -   results are saved as files in output folder
+
+    -   with a structure like this:
 
 -   **How to post-process BirdNET results in R?**
 
--   Importing, exploring, validation, visualization, etc?
+    -   Importing
+
+    -   Exploring (visualization, trend, ...)
+
+    -   Validation, etc.
 
 -   **`birdnetTools`**
 :::
@@ -707,93 +712,133 @@ Easy! :heart:
 
 ## Working with BirdNET output
 
-![](images/clipboard-2366157155.png)
+![](images/clipboard-2147607732.png)
 
-function syntax: birdnet_*()
+function syntax: birdnet\_\*()
+
+
+
 
 ## Data import
 
-1. Load the `birdnetTools` package:
+1.  Load the `birdnetTools` package:
+
 ```{r}
 library(birdnetTools)
 ```
 
-2. Identify the path to the BirdNET output folder:
+2.  Identify the path to the BirdNET output folder:
+
 ```{r}
 output_path <- here("slides", "birdnet_analysis_example_output")
 ```
 
-3. Import the BirdNET output with `birdnet_combine()`:
+3.  Import the BirdNET output with `birdnet_combine()`:
+
 ```{r}
 #| message: true
+#| cache: true
 predictions <- birdnet_combine(output_path)
 ```
 
 ```{r}
 #| echo: false
 predictions |> 
-datatable(
-  options = list(
-    scrollX = TRUE,
-    scrollY = "125px",
-    paging = FALSE,
-    dom = "ft"
-  ),
-  class = "compact",
-  rownames = FALSE
-)
+  datatable(
+    options = list(
+      scrollX = TRUE,
+      scrollY = "125px",
+      paging = FALSE,
+      dom = "ft"
+    ),
+    class = "compact",
+    rownames = FALSE
+  )
 ```
 
 ## Data exploration
 
-Let's use an example dataset provided in `birdnetTools`:
-
-```{r}
-predictions <- example_jprf_2023
-```
-
-- John Prince Research Forest, British Columbia, Canada
-- 5 ARU sites
-- During May–June 2023
-- 24 hours using a duty cycle of 1-min on, 4-min off
-
-```{r}
-#| echo: false
-predictions |> 
-datatable(
-  options = list(
-    scrollX = TRUE,
-    scrollY = "400px",
-    paging = FALSE,
-    dom = "ft"
-  ),
-  class = "compact",
-  rownames = FALSE
-)
-```
-
-
-## Data exploration (con'd)
-
 Sometimes we need more than just the detection. For example...
 
-1. Date and time
+1.  Add date and time information with `birdnet_add_datetime()`:
+
 ```{r}
 #| message: true
 predictions_datetime <- birdnet_add_datetime(predictions)
 ```
 
-- This function automatically detects the date / time format from the file name
+-   This function automatically detects the date / time from the file name
 
-- And mutates eight date / time columns:
+-   And mutates eight date / time columns:
 
 ```{r}
 #| echo: false
 predictions_datetime |> 
+  datatable(
+    options = list(
+      scrollX = TRUE,
+      scrollY = "200px",
+      paging = FALSE,
+      dom = "ft"
+    ),
+    class = "compact",
+    rownames = FALSE
+  )
+```
+
+## Data exploration (con'd) :hot_pepper:
+
+-   Default setting of `birdnet_add_datetime()` covers most of the formats:
+
+```{r}
+formals(birdnet_add_datetime)$formats
+```
+
+-   But, if the datetime format is special, it could fail:
+
+```{r}
+#| message: true
+predictions_fail <- predictions[1:3,] |> 
+  dplyr::mutate(File = c("E:\\Audio\\2023_passerine\\14_18\\00014530_20230518T1335.WAV",
+                         "E:\\Audio\\2023_passerine\\14_18\\051820231335.WAV",
+                         "E:\\Audio\\2023_passerine\\14_18\\18052023133500.WAV"))
+
+predictions_fail |> birdnet_add_datetime()
+```
+
+## Data exploration (con'd) :hot_pepper:
+
+-   You could then set your own format with the `formats` argument:
+
+```{r}
+#| message: true
+predictions_fail |> birdnet_add_datetime(formats = c("%Y%m%dT%H%M",  # <- user-defined format
+                                                     "%m%d%Y%H%M",
+                                                     "%d%m%Y%H%M%S"))
+```
+
+## Data exploration (con'd)
+
+2.  Filter the detection with `birdnet_filter()`:
+
+
+::: panel-tabset
+## by species
+
+```{r}
+predictions_filtered <- predictions |> 
+  birdnet_filter(species = c("Great Cormorant", "Wood Thrush"))
+```
+
+```{r}
+#| echo: false
+df <- predictions_filtered
+
+df |> 
 datatable(
   options = list(
     scrollX = TRUE,
-    scrollY = "200px",
+    scrollY = "300px",
     paging = FALSE,
     dom = "ft"
   ),
@@ -804,50 +849,61 @@ datatable(
 
 
 
-## Data exploration (con'd) 🌶
-
-- Default setting of `birdnet_add_datetime()` covers most of the formats:
+## by threshold
 
 ```{r}
-formals(birdnet_add_datetime)$formats
+predictions_filtered <- predictions |> 
+  birdnet_filter(species = c("Great Cormorant", "Wood Thrush"),
+                 threshold = )
 ```
 
-- But, if the datetime format is special, it could fail:
 ```{r}
-#| message: true
-#| cache: true
-predictions_fail <- example_jprf_2023[1:5,] |> 
-  dplyr::mutate(filepath =c(
-    "E:\\Audio\\2023_passerine\\14_18\\00014530_20230518T1335.WAV",
-    "E:\\Audio\\2023_passerine\\14_18\\051820231335.WAV",
-    "E:\\Audio\\2023_passerine\\14_18\\18052023133500.WAV",
-    "E:\\Audio\\2023_passerine\\14_18\\2023-05-18-13-35-00.WAV",
-    "E:\\Audio\\2023_passerine\\14_18\\202305181335.WAV"))
+#| echo: false
+df <- predictions_filtered
 
-predictions_fail |> birdnet_add_datetime()
-```
-
-- You could then set your own format with the `formats` argument:
-```{r}
-#| message: true
-#| cache: true
-predictions_fail |> birdnet_add_datetime(formats = c("%Y%m%dT%H%M", # <- user-defined format
-                                                     "%m%d%Y%H%M",
-                                                     "%d%m%Y%H%M%S",
-                                                     "%Y-%m-%d-%H-%M-%S",
-                                                     "%Y%m%d%H%M"))
+df |> 
+datatable(
+  options = list(
+    scrollX = TRUE,
+    scrollY = "300px",
+    paging = FALSE,
+    dom = "ft"
+  ),
+  class = "compact",
+  rownames = FALSE
+)
 ```
 
 
-> See detailed documentation at `?birdnet_add_datetime()`
+## by time
+
+```{r}
+predictions_filtered <- predictions |> 
+  birdnet_filter(species = c("Great Cormorant", "Wood Thrush"))
+```
+
+```{r}
+#| echo: false
+df <- predictions_filtered
+
+df |> 
+datatable(
+  options = list(
+    scrollX = TRUE,
+    scrollY = "300px",
+    paging = FALSE,
+    dom = "ft"
+  ),
+  class = "compact",
+  rownames = FALSE
+)
+```
+
+:::
 
 
 
-2. Site of each detection
 
-3. Filter
-
-4. Headmap
 
 ## Your turn - 2
 
@@ -855,7 +911,7 @@ predictions_fail |> birdnet_add_datetime(formats = c("%Y%m%dT%H%M", # <- user-de
 
 ## Your turn - 3
 
-# Play a game with BirdNET, in R!
+# Play a game with BirdNET, in R! :hot_pepper:
 
 ## Beat the BirdNET :bird:
 
