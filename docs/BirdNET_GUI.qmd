@@ -1,5 +1,0 @@
----
-title: "BirdNET_GUI"
-format: html
----
-
