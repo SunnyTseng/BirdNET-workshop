@@ -1,8 +1,14 @@
-# Analyzing audio with BirdNET, in R
+# Analyzing audio with BirdNET in R
 
 
 Hello! Welcome and thank you for your interest in the BirdNET workshop!
 This repository is the central hub for the BirdNET workshop.
+
+- **Audio data:** Bringing your own audio files is optional. All example
+  recordings used in the workshop are provided in this repository.
+- **Need help?** If any of the installation steps below fail, or if you
+  have any questions, please open an issue in this repo or send me an
+  email at sunny@sunnytseng.ca, and I’ll help you sort it out.
 
 ## About
 
@@ -21,9 +27,7 @@ BirdNET is one of the most widely used AI tools for identifying bird
 species from audio recordings. In this workshop, we will use two R
 packages built around BirdNET: `birdnetR`, the R interface for running
 BirdNET, and `birdnetTools`, which provides utilities for processing and
-validating BirdNET outputs.
-
-You will learn how to do the following in R:
+validating BirdNET outputs. You will learn how to do the following in R:
 
 - Run single-file and batch audio analyses
 
@@ -40,12 +44,6 @@ to learn the birds of Mérida!
 To make sure everyone gets the most out of the session, please complete
 the steps below **before** the workshop. They take less than 20 minutes
 in total.
-
-- **Audio data:** Bringing your own audio files is optional. All example
-  recordings used in the workshop are provided in this repository.
-- **Need help?** If any of the installation steps below fail, please
-  open an issue in this repo or send me an email at sunny@sunnytseng.ca,
-  and I’ll help you sort it out.
 
 ### 1. Update R
 
