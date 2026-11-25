@@ -12,14 +12,18 @@ This repository is the central hub for the BirdNET workshop.
 
 ## About
 
+This workshop is part of the [International Ornithological
+Congress](https://iocongress2026.com/) 2026. It is free and open to all
+conference participants.
+
 - Instructor: [Sunny Tseng, PhD](https://sunnytseng.ca/)
-- Organizer: [International Ornithological Congress
-  2026](https://ioc2026.org/)
-- Date: **Nov. 30 2026** (Monday)
-- Time: **13:00 - 15:00** (local time)
+
+- Date / Time: **Nov. 30 2026** (Monday) **13:00 - 15:00** (local time)
+
 - Location: **Room 25A**, Yucatán International Congress Center, Merida
-- Cost: Free
-- Audience: all IOC participants
+
+- Workshop Slides: Coming soon (will be linked here before the
+  workshop).
 
 ## What will be covered
 
@@ -70,7 +74,7 @@ Run one of the following in the R console:
 install.packages("birdnetR")
 ```
 
-2.  Or install the development version from GitHub:
+2.  **Or** install the development version from GitHub:
 
 ``` r
 # install.packages("pak")
@@ -99,7 +103,7 @@ Run one of the following in the R console:
 install.packages('birdnetTools', repos = c('[https://sunnytseng.r-universe.dev](https://sunnytseng.r-universe.dev)', '[https://cloud.r-project.org](https://cloud.r-project.org)'))
 ```
 
-2.  Or install the development version from GitHub:
+2.  **Or** install the development version from GitHub:
 
 ``` r
 # install.packages("pak")
