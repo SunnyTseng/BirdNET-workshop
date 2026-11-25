@@ -1,0 +1,11 @@
+Start (s),End (s),Scientific name,Common name,Confidence,File,clip_file,clip_start,clip_end
+30,33,Ficedula parva,Red-breasted Flycatcher,0.2763,C:\Users\sunny\Dropbox\work_remotely\BirdNET-workshop\slides\birdnet_analysis_example\20250609_005600.WAV,01_20250609_005600_30_33_Red_breasted_Flycatcher_0.276.WAV,27,36
+27,30,Ficedula parva,Red-breasted Flycatcher,0.3322,C:\Users\sunny\Dropbox\work_remotely\BirdNET-workshop\slides\birdnet_analysis_example\20250609_004000.WAV,02_20250609_004000_27_30_Red_breasted_Flycatcher_0.332.WAV,24,33
+27,30,Ficedula parva,Red-breasted Flycatcher,0.3636,C:\Users\sunny\Dropbox\work_remotely\BirdNET-workshop\slides\birdnet_analysis_example\20250609_000800.WAV,03_20250609_000800_27_30_Red_breasted_Flycatcher_0.364.WAV,24,33
+6,9,Ficedula parva,Red-breasted Flycatcher,0.4148,C:\Users\sunny\Dropbox\work_remotely\BirdNET-workshop\slides\birdnet_analysis_example\20250609_002400.WAV,04_20250609_002400_6_9_Red_breasted_Flycatcher_0.415.WAV,3,12
+6,9,Ficedula parva,Red-breasted Flycatcher,0.4863,C:\Users\sunny\Dropbox\work_remotely\BirdNET-workshop\slides\birdnet_analysis_example\20250609_000000.WAV,05_20250609_000000_6_9_Red_breasted_Flycatcher_0.486.WAV,3,12
+24,27,Ficedula parva,Red-breasted Flycatcher,0.5374,C:\Users\sunny\Dropbox\work_remotely\BirdNET-workshop\slides\birdnet_analysis_example\20250609_001600.WAV,06_20250609_001600_24_27_Red_breasted_Flycatcher_0.537.WAV,21,30
+27,30,Ficedula parva,Red-breasted Flycatcher,0.7764,C:\Users\sunny\Dropbox\work_remotely\BirdNET-workshop\slides\birdnet_analysis_example\20250609_002000.WAV,07_20250609_002000_27_30_Red_breasted_Flycatcher_0.776.WAV,24,33
+42,45,Ficedula parva,Red-breasted Flycatcher,0.8077,C:\Users\sunny\Dropbox\work_remotely\BirdNET-workshop\slides\birdnet_analysis_example\20250609_002000.WAV,08_20250609_002000_42_45_Red_breasted_Flycatcher_0.808.WAV,39,48
+6,9,Ficedula parva,Red-breasted Flycatcher,0.8561,C:\Users\sunny\Dropbox\work_remotely\BirdNET-workshop\slides\birdnet_analysis_example\20250609_002000.WAV,09_20250609_002000_6_9_Red_breasted_Flycatcher_0.856.WAV,3,12
+9,12,Ficedula parva,Red-breasted Flycatcher,0.9126,C:\Users\sunny\Dropbox\work_remotely\BirdNET-workshop\slides\birdnet_analysis_example\20250609_002000.WAV,10_20250609_002000_9_12_Red_breasted_Flycatcher_0.913.WAV,6,15

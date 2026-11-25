@@ -50,7 +50,9 @@ show_table <- function(df, height = "200px") {
 
 -   WIFI: xyz (pwd: 12345678)
 
--   Workshop Github:
+-   Github repo:
+
+- 
 
 ## About me
 
@@ -538,7 +540,7 @@ datatable(
 
 ⏱ 10 minutes
 
-**Data:** `slides/practice_single_analysis/example_audio_single_analysis.mp3`
+**Data:** `./practice_single_analysis/example_audio_single_analysis.mp3`
 
 -   Which bird is the **dominant species** in this example recordings?
 -   **Challenge:** set the location to Mérida. Does it change the result?
@@ -552,7 +554,7 @@ library(here)
 
 model <- ___()
 
-audio_path <- here("slides", "practice_single_analysis", "example_audio_single_analysis.mp3")
+audio_path <- here("practice_single_analysis", "example_audio_single_analysis.mp3")
 
 predictions <- predict(model, ___,
                        latitude = ___,  # Mérida: about 20.97
@@ -569,13 +571,12 @@ Northern Bobwhite (*Colinus_nigrogularis*)!
 #| echo: false
 #| message: false
 
-if (file.exists(here("slides", "practice_single_analysis", "solution.rds"))) {
-  df <- readRDS(here("slides", "practice_single_analysis", "solution.rds"))
+if (file.exists(here("practice_single_analysis", "solution.rds"))) {
+  df <- readRDS(here("practice_single_analysis", "solution.rds"))
 } else {
   model <- load_birdnet()
 
-  audio_path <- here("slides", 
-                "practice_single_analysis", 
+  audio_path <- here("practice_single_analysis", 
                 "example_audio_single_analysis.mp3")
 
   df <- predict(model, audio_path,
@@ -609,7 +610,7 @@ library(here)
 
 model <- load_birdnet()
 
-audio_path <- here("slides", "practice_single_analysis", "example_audio_single_analysis.mp3")
+audio_path <- here("practice_single_analysis", "example_audio_single_analysis.mp3")
 
 predictions <- predict(model, audio_path,
                        latitude = 20.97, 
@@ -683,7 +684,7 @@ datatable(
 
 ```
 
-Easy! :heart:
+Use the file name to seperate each recordings - Easy! :heart:
 
 ## Batch analysis from other tools
 
@@ -812,7 +813,7 @@ predictions_fail <- predictions[1:3,] |>
                          "E:\\Audio\\2023_passerine\\14_18\\051820231335.WAV",
                          "E:\\Audio\\2023_passerine\\14_18\\18052023133500.WAV"))
 
-predictions_fail |> birdnet_add_datetime()
+birdnet_add_datetime(predictions_fail)
 ```
 
 ## Data exploration (con'd) :hot_pepper:
@@ -828,7 +829,42 @@ predictions_fail |> birdnet_add_datetime(formats = c("%Y%m%dT%H%M",  # <- user-d
 
 ## Data exploration (con'd)
 
-2.  Filter the detection with `birdnet_filter()`:
+2.  Add location information with `birdnet_add_site()`:
+
+```{r}
+#| message: true
+#| cache: true
+
+predictions_site <- birdnet_add_site(predictions, i = -2)
+
+```
+
+```{r}
+#| echo: false
+#| cache: true
+
+predictions_site <- example_jprf_2023[1:20, ] |>
+  birdnet_add_site(i = -2)
+
+predictions_site |> 
+  select(filepath, start, end, scientific_name, common_name, site) |>
+  datatable(
+    options = list(
+      scrollX = TRUE,
+      scrollY = "300px",
+      paging = FALSE,
+      dom = "ft"
+    ),
+    class = "compact",
+    rownames = FALSE
+  )
+```
+
+-   Recordings from the same site should be in the same folder, and the folder name has to contain the site name
+
+## Data exploration (con'd)
+
+3.  Filter the detection with `birdnet_filter()`:
 
 ::: panel-tabset
 ## by species
@@ -916,66 +952,341 @@ datatable(
 ![](images/clipboard-709298320.png)
 :::
 
+## Data exploration (con'd) :hot_pepper:
+
+4.  Quick visualization with `birdnet_heatmap()`:
+
+```{r}
+#| cache: true
+
+predictions <- example_jprf_2023
+
+birdnet_heatmap(predictions, species = "Swainson's Thrush")
+
+```
 
 ## Your turn :owl:
 
 ⏱ 10 minutes
 
-**Data:** `slides/practice_batch_analysis/`
+**Data:** `./practice_batch_analysis/`
 
-- Which date was the recordings collected from?
-- How many detections does Great Cormorant have, with confidence > 0.3? 
-- **Challenge**: 
+-   Which date was the recordings collected from?
+-   How many detections does Great Cormorant have, with confidence \> 0.3?
+
+### Hint
+
+```{r}
+#| eval: false
+library(birdnetTools)
+library(here)
+
+predictions <- birdnet_combine(here("practice_batch_analysis"))
+
+birdnet_add_datetime(___)
+
+birdnet_filter(predictions,
+               species = ___,
+               ___ = 0.3)
+```
+
+## Your turn :key:
+
+-   2025 Jun. 9th!
+    -   BTW, my birthday!
+-   Four detections :)
+
+### Solution
+
+```{r}
+#| eval: false
+library(birdnetTools)
+library(here)
+
+predictions <- birdnet_combine(here("slides", "practice_batch_analysis"))
+
+birdnet_add_datetime(predictions)
+
+birdnet_filter(predictions,
+               species = "Great Cormorant",
+               threshold = 0.3)
+```
+
+# Data validation
+
+## Why do we need to validate detections?
+
+::::: columns
+::: {.column width="40%"}
+-   BirdNET is not perfect
+-   Differs by bird species
+-   Validation - peak into that imperfection
+-   Four types of **predictions results**:
+:::
+
+::: {.column width="60%"}
+```{r}
+#| echo: false
+#| cache: true
+#| dev: ragg_png
+#| fig-width: 7.5
+#| fig-height: 6.1
+#| fig-align: center
+library(ggplot2)
+
+confusion_plot <- function(col_icons    = c("☀️", "☁️"),   # prediction: left, right
+                           row_icons    = c("☁️", "☀️"),   # reality: top, bottom
+                           reporter     = "💁",            # the forecaster
+                           observer     = "🔭",            # emoji fallback
+                           observer_img = NULL,            # e.g. "images/binoculars.png"
+                           label_size   = 20,
+                           icon_size    = 20,
+                           person_size  = 26) {
+
+  tiles <- data.frame(
+    x     = c(1, 2, 1, 2),
+    y     = c(2, 2, 1, 1),
+    label = c("FP", "TN", "TP", "FN")
+  )
+
+  p <- ggplot(tiles, aes(x, y)) +
+    geom_tile(aes(fill = label), width = 0.95, height = 0.95,
+              colour = "black", linewidth = 1) +
+    geom_text(aes(label = label), size = label_size, fontface = "bold") +
+
+    # prediction icons below the columns, reporter beside them (right)
+    annotate("text", x = 1:2,  y = 0.27, label = col_icons, size = icon_size) +
+    annotate("text", x = 2.5,  y = 0.27, label = reporter,  size = person_size) +
+
+    # reality icons left of the rows
+    annotate("text", x = 0.28, y = c(2, 1), label = row_icons, size = icon_size) +
+
+    scale_fill_manual(values = c(FP = "#26dc7d", TN = "#dd4f82",
+                                 TP = "#0fc8f2", FN = "#fada68")) +
+    coord_equal(xlim = c(0.0, 2.85), ylim = c(0.05, 2.55),
+                expand = FALSE, clip = "off") +
+    theme_void() +
+    theme(legend.position = "none",
+          plot.margin = margin(0, 0, 0, 0))
+
+  # observer: directly below the row icons (bottom-left corner)
+  if (is.null(observer_img)) {
+    p + annotate("text", x = 0.28, y = 0.27, label = observer, size = person_size)
+  } else {
+    p + ggimage::geom_image(
+      data = data.frame(x = 0.28, y = 0.27, image = observer_img),
+      aes(x, y, image = image), size = 0.14, inherit.aes = FALSE
+    )
+  }
+}
+
+confusion_plot()
+```
+:::
+:::::
+
+## Two types of accuracy
+
+```{r}
+#| echo: false
+
+#| echo: false
+
+cm_colors <- c(FP = "#26dc7d", TN = "#dd4f82", TP = "#0fc8f2", FN = "#fada68")
+
+# num = one label (e.g. "FP"); den = two labels (e.g. c("FN", "FP"))
+fraction_plot <- function(num, den, label_size = 14) {
+
+  tiles <- data.frame(
+    x     = c(1.0, 2.7, 4.4),
+    y     = c(1.0, 1.0, 1.0),
+    label = c(num, den),
+    stringsAsFactors = FALSE
+  )
+
+  ggplot(tiles, aes(x, y)) +
+    geom_tile(aes(fill = label), width = 0.85, height = 0.85,
+              colour = "black", linewidth = 1) +
+    geom_text(aes(label = label), size = label_size*1.2, fontface = "bold") +
+    annotate("text", x = 1.85, y = 1.0, label = "/",
+             size = label_size * 1.5, fontface = "bold") +
+    annotate("text", x = 3.55, y = 1.0, label = "+",
+             size = label_size, fontface = "bold") +
+    scale_fill_manual(values = cm_colors) +
+    coord_equal(xlim = c(0.4, 5.0), ylim = c(0.4, 1.6), expand = FALSE) +
+    theme_void() +
+    theme(legend.position = "none", plot.margin = margin(0, 0, 0, 0))
+}
+```
+
+::::::: columns
+::: {.column width="40%"}
+```{r}
+#| echo: false
+#| dev: ragg_png
+#| fig-width: 7.5
+#| fig-height: 6.1
+#| out-width: 100%
+confusion_plot()
+```
+:::
+
+::::: {.column width="60%"}
+::: fragment
+### Precision
+
+When the weather forecast says it's sunny, how likely is that statement to be true?
+
+```{r}
+#| echo: false
+#| fig-width: 5
+#| fig-height: 1.8
+#| out-width: 45%
+fraction_plot("TP", c("FP", "TP"))
+```
+:::
+
+::: fragment
+### Recall
+
+When it's sunny, how likely is it that the forecast accurately predicted the sun?
+
+```{r}
+#| echo: false
+#| fig-width: 5
+#| fig-height: 1.8
+#| out-width: 45%
+fraction_plot("TP", c("FN", "TP"))
+```
+:::
+:::::
+:::::::
+
+## Accuracy in bird context
+
+We need to know if the audio actually contains the target bird species
+
+-   Prediction - BirdNET
+
+-   Observed - human validation
+
+-   Then we can assign the detection to one of FP/TP/TN/FN
+
+-   Validate many detections -\> get precision and recall
+
+## Accuracy in bird context
+
+![](images/clipboard-3226544893.png)
+
+## Accuracy in bird context
+
+![](images/clipboard-2919978352.png)
+
+## Accuracy in bird context
+
+![](images/clipboard-59430294.png)
+
+## Accuracy in bird context
+
+![](images/clipboard-913587502.png)
+
+## Accuracy in bird context
+
+![](images/clipboard-2330277653.png)
+
+## Validation in R
+
+There are four functions in `birdnetTools` to do validation in R
+
+1.  **Subsample** the detections to validate with `birdnet_subsample()`
+
+2.  **Extract** a short audio clip for each of them into one folder with `birdnet_extract_clips()`
+
+3.  **Validate** the clips in a Shiny app launched by `birdnet_launch_validation()`
+
+4.  **Calculate** a species-specific threshold with `birdnet_calc_threshold()`
+
+
+> Full instructins can be found in [`birdnetTools` documentation](https://birdnet-team.github.io/birdnetTools/articles/birdnetTools.html#validating-detections)
+
+
+
+## Validate clips in R :hot_pepper:
+
+- Subsampled detections for validate: `./practice_vlidation/`
+- For those who are curious how I created the folder:
+
+```{r}
+#| eval: false
+detections <- birdnet_combine(here("practice_batch_analysis"))
+
+detections |>
+  birdnet_filter(species = "Red-breasted Flycatcher") |>
+  birdnet_subsample(n = 10, seed = 123) |>
+  birdnet_extract_clips(audio_dir = here("slides", "birdnet_analysis_example"),
+                        output_dir = here("practice_vlidation"))
+```
+
+
+- We want to label each detection as **TP** (accurate) or **FP** (false positive) 
+- Run `birdnet_launch_validation()` to open the Shiny validation app
+
+```{r}
+#| eval: false
+
+birdnet_launch_validation()
+```
+
+
+
+## Validate clips in R :hot_pepper:
+
+![](images/clipboard-17097719.png)
+
+## Validate clips in R :hot_pepper:
+
+![](images/clipboard-2391139292.png)
+
+## Validate clips in R :hot_pepper:
+
+![](images/clipboard-3544740024.png)
+
+## Validate clips in R :hot_pepper:
+
+![](images/clipboard-2393311455.png)
+
+
+
+## Your turn :owl:
+
+⏱ 10 minutes
+
+**Data:** `./practice_vlidation/`
+
+-   Import the folder
+-   Visualize / listen to the detections
+-   **Challenge**: Edit the vlidation result, check CSV
 
 ### Hint
 
 ```{r}
 #| eval: false
 
-library(birdnetTools)
-library(here)
-
-predictions <- birdnet_combine(here("slides", "practice_batch_analysis"))
-
-birdnet_add_datetime(predictions)
-
-birdnet_filter(predictions,
-               species = "Great Cormorant",
-               threshold = 0.3)
-
+birdnet_launch_validation()
 ```
+
 
 
 ## Your turn :key:
 
-- 2025 Jun. 9th! <- my birthday!
-- Four detections :) 
 
 ### Solution
 
 ```{r}
 #| eval: false
 
-library(birdnetTools)
-library(here)
-
-predictions <- birdnet_combine(here("slides", "practice_batch_analysis"))
-
-birdnet_add_datetime(predictions)
-
-birdnet_filter(predictions,
-               species = "Great Cormorant",
-               threshold = 0.3)
-
+birdnet_launch_validation()
 ```
-
-
-
-
-
-# Data validation
-
-## Your turn - 3
 
 # Play a game with BirdNET, in R! :hot_pepper:
 
@@ -992,11 +1303,11 @@ A bird guessing game, designed with BirdNET
 
 ### How I made the game
 
-**Step 1.** Explore / download Mérida birds on Xeno-Canto → `suwo`
+1. Explore / download Mérida birds on Xeno-Canto → `suwo`
 
-**Step 2.** Read and check the audio in R → `tuneR`, `seewave`
+2. Read and check the audio in R → `tuneR`, `seewave`
 
-**Step 3.** Identify species with BirdNET → `birdnetR`
+3. Identify species with BirdNET → `birdnetR`
 
 ## Step 1: Explore bird sounds
 
@@ -1280,33 +1591,40 @@ md`**Xeno-Canto label (the answer):**
 
 ## Hope you had fun!
 
-I had a lot of fun! :) 
+Having fun is probably most important above all! :)
 
-## From 5 clips to 50,000 hours
 
-Real projects: hundreds of recorders × months of audio. Enter `birdnetTools`
 
-![](images/clipboard-2366157155.png){fig-align="center"}
+## Recap: BirdNET in R
 
-## Recap: R + birds
+### `birdnetR`
+1. Single / batch analysis
 
-1.  Communities and opportunities
-2.  Packages for bird bioacoustics
-3.  The game for rainy Vancouver
-4.  R is fun!
+### `birdnetTools`
+2. Import detection results 
+3. Explore (add metadata, filter, visualize) 
+4. Vlidate detections
 
-Thanks for the "East and Southeast Asia Travel Fund for Ornithology, from IOU"
+## Recap: BirdNET in R (con'd)
+![](images/clipboard-2147607732.png)
 
-. . .
 
-> Thank you!
+
+## Thank you
+
+Sunny Tseng, independent ecological consultant
+Contact: sunny@sunnytseng.ca
+Website: sunnytseng.ca
+
+
+
+> Enjoy the conference!
+
+> Card, sticker and photo? 
 
 ::: aside
 Presentation by Sunny Tseng <https://sunnytseng.ca/>, CC BY 4.0
+
+Travel funds: East and Southeast Asia Travel Fund for Ornithology
 :::
 
-## Discussion
-
--   Which AI tool I should use? Local versus global?
-
--   
