@@ -68,13 +68,13 @@ R console. To update, download the latest version from
 
 Run one of the following in the R console:
 
-1.  Install the released version from CRAN (recommended):
+1.  Install the released version from r-universe (recommended):
 
 ``` r
-install.packages("birdnetR")
+install.packages('birdnetR', repos = c('https://birdnet-team.r-universe.dev', 'https://cloud.r-project.org'))
 ```
 
-2.  **Or** install the development version from GitHub:
+2.  Install the development version from GitHub:
 
 ``` r
 # install.packages("pak")
@@ -88,10 +88,19 @@ longer. To check that the installation worked, run:
 ``` r
 library(birdnetR)
 
-model <- load_birdnet()  # load the BirdNET model
+# Load the BirdNET+ V3.0 acoustic model (downloaded on first use)
+model <- birdnet_load()
 ```
 
-If you get no errors, you’re all set.
+If you get no errors, you’re all set. The model installation takes few
+minutes:
+
+![](images/clipboard-1937499926.png)
+
+If the error message shows `function not found` try re-starting r
+session as installation might require restarting R session to work
+properly - `birdnetR` is having a breaking release on *Nov.26*, and we
+just happen to hit that transition!
 
 ### 4. Install the `birdnetTools` package
 
