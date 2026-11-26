@@ -74,7 +74,7 @@ Run one of the following in the R console:
 install.packages('birdnetR', repos = c('https://birdnet-team.r-universe.dev', 'https://cloud.r-project.org'))
 ```
 
-2.  Install the development version from GitHub:
+2.  **Or** install the development version from GitHub:
 
 ``` r
 # install.packages("pak")
