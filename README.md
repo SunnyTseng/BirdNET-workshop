@@ -142,7 +142,7 @@ of your choice.
 If you already use Git / GitHub, click the blue **Code** button near the
 top right of this page, copy the HTTPS URL, and clone the repository.
 
-![](images/clipboard-1087878207.png)
+![](images/clipboard-853815142.png)
 
 ## AI disclosure
 
