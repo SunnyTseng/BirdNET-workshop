@@ -100,7 +100,7 @@ Run one of the following in the R console:
 1.  Install the released version from r-universe (recommended):
 
 ``` r
-install.packages('birdnetTools', repos = c('[https://sunnytseng.r-universe.dev](https://sunnytseng.r-universe.dev)', '[https://cloud.r-project.org](https://cloud.r-project.org)'))
+install.packages('birdnetTools', repos = c('https://sunnytseng.r-universe.dev', 'https://cloud.r-project.org'))
 ```
 
 2.  **Or** install the development version from GitHub:
