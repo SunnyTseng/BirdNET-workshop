@@ -66,9 +66,15 @@ R console. To update, download the latest version from
 
 ### 3. Install the `birdnetR` package
 
-Run this in the R console:
+Run one of the following in the R console:
 
-1.  Install the development version from GitHub:
+1.  Install the released version from r-universe (recommended):
+
+``` r
+install.packages('birdnetR', repos = c('https://birdnet-team.r-universe.dev', 'https://cloud.r-project.org'))
+```
+
+2.  Install the development version from GitHub:
 
 ``` r
 # install.packages("pak")
@@ -93,7 +99,7 @@ minutes:
 
 If the error message shows `function not found` try re-starting r
 session as installation might require restarting R session to work
-properly - `birdnetR` is having a breaking release on Nov.26, and we
+properly - `birdnetR` is having a breaking release on *Nov.26*, and we
 just happen to hit that transition!
 
 ### 4. Install the `birdnetTools` package
