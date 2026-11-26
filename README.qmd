@@ -124,11 +124,9 @@ Click the blue **Code** button near the top right of this page, then click **Dow
 
 If you already use Git / GitHub, click the blue **Code** button near the top right of this page, copy the HTTPS URL, and clone the repository.
 
-<<<<<<< HEAD
+
 ![](images/clipboard-853815142.png)
-=======
-![](images/clipboard-1087878207.png)
->>>>>>> 62c9d3ab16e11d9f39be1e06900c66aec0541f81
+
 
 ## AI disclosure
 
